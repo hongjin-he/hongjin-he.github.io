@@ -1,0 +1,556 @@
+<!doctype html>
+<title>HongJin HE</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HongJin HE — AI & Quant researcher at HKUST and Stanford, working on world models, mathematical finance, and GFlowNets.">
+
+<style>
+  /* ─── Tokens ─────────────────────────────────────────── */
+  :root {
+    --bg:        #F8F8F6;
+    --surface:   #F0F0ED;
+    --text:      #151515;
+    --muted:     #69696A;
+    --faint:     #ADADAB;
+    --border:    #E0E0DC;
+    --accent:    #1B4EDB;
+    --accent-h:  #0D38B5;
+
+    --sidebar-w: 220px;
+    --gap:       56px;
+    --max-w:     900px;
+    --pad:       60px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:      #121214;
+      --surface: #1C1C1F;
+      --text:    #E6E6E2;
+      --muted:   #888886;
+      --faint:   #555552;
+      --border:  #282828;
+      --accent:  #6A8FF5;
+      --accent-h:#85A5FF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:      #121214;
+    --surface: #1C1C1F;
+    --text:    #E6E6E2;
+    --muted:   #888886;
+    --faint:   #555552;
+    --border:  #282828;
+    --accent:  #6A8FF5;
+    --accent-h:#85A5FF;
+  }
+  :root[data-theme="light"] {
+    --bg:      #F8F8F6;
+    --surface: #F0F0ED;
+    --text:    #151515;
+    --muted:   #69696A;
+    --faint:   #ADADAB;
+    --border:  #E0E0DC;
+    --accent:  #1B4EDB;
+    --accent-h:#0D38B5;
+  }
+
+  /* ─── Reset ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover { color: var(--accent-h); text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 1px; }
+
+  /* ─── Layout ─────────────────────────────────────────── */
+  .layout {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--gap);
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: var(--pad) 28px;
+  }
+
+  .sidebar {
+    flex: 0 0 var(--sidebar-w);
+    position: sticky;
+    top: 40px;
+  }
+
+  .main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ─── Sidebar ─────────────────────────────────────────── */
+  .avatar-wrap {
+    width: 148px;
+    height: 148px;
+    margin-bottom: 22px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--surface);
+    position: relative;
+  }
+  .avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  /* SVG placeholder shown when image fails to load */
+  .avatar-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    color: var(--muted);
+    letter-spacing: -1px;
+  }
+
+  .s-name {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: normal;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+  .s-name-cn {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .s-affil {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 3px;
+  }
+
+  .s-links {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .s-links a {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: color 0.15s;
+  }
+  .s-links a:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .s-links svg {
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+  .s-links a:hover svg { opacity: 1; }
+
+  .divider-h {
+    width: 28px;
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  /* ─── Section headers ─────────────────────────────────── */
+  section {
+    margin-bottom: 48px;
+  }
+
+  section h2 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ─── Bio ─────────────────────────────────────────────── */
+  .bio p {
+    margin-bottom: 14px;
+    color: var(--text);
+    max-width: 60ch;
+  }
+  .bio p:last-child { margin-bottom: 0; }
+
+  blockquote.pull {
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+    margin: 22px 0;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  /* ─── Research grid ───────────────────────────────────── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 32px;
+  }
+  .ri {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .ri-label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--faint);
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* ─── Papers ──────────────────────────────────────────── */
+  .paper {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .paper:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .paper-title {
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+  .paper-title a {
+    color: var(--text);
+  }
+  .paper-title a:hover { color: var(--accent); text-decoration: none; }
+
+  .paper-meta {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .paper-meta strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .badge {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    border: 1px solid currentColor;
+  }
+  .badge-accent { color: var(--accent); border-color: var(--accent); }
+  .badge-muted  { color: var(--faint);  border-color: var(--border); }
+
+  .paper-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    max-width: 58ch;
+  }
+
+  /* ─── Education ───────────────────────────────────────── */
+  .edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .edu-item {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 0 20px;
+    align-items: baseline;
+  }
+  .edu-year {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: var(--faint);
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .edu-inst {
+    font-size: 14.5px;
+    line-height: 1.4;
+  }
+  .edu-degree {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ─── Mobile ──────────────────────────────────────────── */
+  @media (max-width: 660px) {
+    .layout {
+      flex-direction: column;
+      padding: 36px 20px;
+      gap: 36px;
+    }
+    .sidebar {
+      position: static;
+    }
+    .avatar-wrap {
+      width: 110px;
+      height: 110px;
+    }
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+    .edu-item {
+      grid-template-columns: 72px 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="layout">
+
+  <!-- ── Sidebar ─────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="avatar-wrap">
+      <div class="avatar-fallback" aria-hidden="true">HH</div>
+      <img
+        src="https://github.com/hongjin-he.png"
+        alt="HongJin HE"
+        onerror="this.style.display='none'"
+      >
+    </div>
+
+    <div class="s-name">HongJin HE</div>
+    <div class="s-name-cn">何泓锦</div>
+
+    <div class="s-affil">HKUST · RMBI + MATH + AI</div>
+    <div class="s-affil">Stanford · IHP Exchange, '26</div>
+
+    <div class="divider-h"></div>
+
+    <nav class="s-links">
+      <a href="mailto:hehongjinhkust0911@gmail.com">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        hehongjinhkust0911@gmail.com
+      </a>
+      <a href="https://github.com/hongjin-he" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        hongjin-he
+      </a>
+      <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        HongJin_HE
+      </a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=HongJin+HE" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        arXiv
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ── Main ────────────────────────────────────────── -->
+  <main class="main">
+
+    <section class="bio">
+      <p>
+        I am an undergraduate at <strong>HKUST</strong> (RMBI + MATH + AI), currently on exchange
+        at <strong>Stanford</strong> as part of the Interdisciplinary Honors Program.
+        My research sits at the intersection of mathematical finance, stochastic analysis,
+        and machine learning — with a focus on building rigorous theoretical foundations
+        for world models applied to quantitative finance.
+      </p>
+
+      <blockquote class="pull">
+        "Factor models learn correlations. World models learn causation. The difference is everything."
+      </blockquote>
+
+      <p>
+        I am the founder of <strong>Alpha Flow</strong>, a research initiative developing
+        mathematical frameworks that unify stochastic differential equations, mean-field game
+        theory, and generative modeling for financial applications. My background traces
+        from Physics Olympiad training through the Tsinghua Physics Talent Program
+        to quantitative research at HKUST and Stanford.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <div class="research-grid">
+        <div class="ri">
+          <span class="ri-label">World Models</span>
+          Market dynamics, latent state prediction, E-Game-C framework
+        </div>
+        <div class="ri">
+          <span class="ri-label">Mathematical Finance</span>
+          SDEs, Lévy processes, stochastic control, mean-field games
+        </div>
+        <div class="ri">
+          <span class="ri-label">Generative Models</span>
+          GFlowNets, flow matching, transformers, VAEs
+        </div>
+        <div class="ri">
+          <span class="ri-label">Reinforcement Learning</span>
+          Model-based RL, HJB equations, PPO / DDPG
+        </div>
+        <div class="ri">
+          <span class="ri-label">LLM Evaluation</span>
+          Hallucination detection, financial NLP, SEC filing analysis
+        </div>
+        <div class="ri">
+          <span class="ri-label">Quantitative Finance</span>
+          Alpha mining, limit order books, backtesting metrics
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Papers &amp; Projects</h2>
+
+      <div class="paper">
+        <div class="paper-title">
+          Mathematical Framework for World Models in Quantitative Finance
+        </div>
+        <div class="paper-meta">
+          <span><strong>HongJin HE</strong></span>
+          <span>·</span>
+          <span>arXiv preprint, July 2026</span>
+          <span class="badge badge-accent">Preprint</span>
+        </div>
+        <div class="paper-desc">
+          Introduces the <em>E-Game-C architecture</em>, replacing recurrent networks with
+          mean-field game equilibrium operators for market dynamics modeling. Presents seven
+          original theorems unifying stochastic decomposition with world model theory.
+          Connects controllability to alpha generation via a novel SDE framework.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          LLM Hallucination in Financial Disclosures
+        </div>
+        <div class="paper-meta">
+          <strong>HongJin HE</strong>
+          <span>·</span>
+          <span>Under peer review, 2026</span>
+          <span class="badge badge-accent">Under Review</span>
+        </div>
+        <div class="paper-desc">
+          Analyzed 5,552 U.S. firms' SEC filings across 3,600+ model responses.
+          Identifies <em>D-type hallucination</em> — where models fabricate confident answers
+          when no source information exists. GPT-4o showed a 54.8% improvement
+          over GPT-3.5 in Prompt Score under controlled prompting conditions.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          <a href="https://github.com/hongjin-he" target="_blank" rel="noopener">
+            GFlowNet Alpha Mining
+          </a>
+        </div>
+        <div class="paper-meta">
+          <strong>HongJin HE</strong>
+          <span>·</span>
+          <span>2025–2026</span>
+          <span class="badge badge-muted">Project</span>
+        </div>
+        <div class="paper-desc">
+          GFlowNet-based alpha factor generation achieving 3× improvement over random baseline
+          (Mean IC: 0.148 vs ~0.05). Generates low-correlation alpha distributions suitable
+          for portfolio construction. PyTorch implementation, &lt;5 min training on Colab T4.
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          <a href="https://github.com/hongjin-he" target="_blank" rel="noopener">
+            Stanford AI Labs Ecosystem
+          </a>
+        </div>
+        <div class="paper-meta">
+          <strong>HongJin HE</strong>
+          <span>·</span>
+          <span>2026</span>
+          <span class="badge badge-muted">Project</span>
+        </div>
+        <div class="paper-desc">
+          Nine interactive visualizations mapping Stanford's AI research landscape across
+          2018–2026 — collaboration networks, research trend clustering, and lab ecosystem
+          structure. Built during Stanford CS exchange.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-year">2025–2026</div>
+          <div>
+            <div class="edu-inst"><strong>Stanford University</strong></div>
+            <div class="edu-degree">Interdisciplinary Honors Program · CS Exchange</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">2024–2029</div>
+          <div>
+            <div class="edu-inst"><strong>HKUST</strong></div>
+            <div class="edu-degree">B.Sc. · Risk Management &amp; Business Intelligence, Mathematics, AI</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">2023</div>
+          <div>
+            <div class="edu-inst"><strong>Tsinghua University</strong></div>
+            <div class="edu-degree">Physics Talent Program · National Physics Olympiad rank 92</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
