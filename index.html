@@ -116,13 +116,16 @@
   .avatar-fallback {
     position: absolute;
     inset: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     font-family: Georgia, serif;
     font-size: 42px;
     color: var(--muted);
     letter-spacing: -1px;
+  }
+  .avatar-fallback.show {
+    display: flex;
   }
 
   .s-name {
@@ -360,7 +363,7 @@
       <img
         src="https://github.com/hongjin-he.png"
         alt="HongJin HE"
-        onerror="this.style.display='none'"
+        onerror="this.style.display='none'; this.previousElementSibling.classList.add('show')"
       >
     </div>
 
