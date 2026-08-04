@@ -56,7 +56,7 @@
   <h1>Hongjin He <span style="font-weight:400;color:var(--sub);font-size:19px;">何泓锦</span></h1>
   <div class="contact">
     Hong Kong SAR · Stanford, CA (2026)<br/>
-    <a href="mailto:hehongjinhkust0911@gmail.com">hehongjinhkust0911@gmail.com</a><br/>
+    <a href="mailto:hhebh@connect.ust.hk">hhebh@connect.ust.hk</a><br/>
     <a href="https://github.com/hongjin-he">github.com/hongjin-he</a> ·
     <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">linkedin</a> ·
     <a href="https://hongjin-he.github.io/">website</a>
@@ -118,10 +118,10 @@
     <div class="when">May 2026 – Present</div>
   </div>
   <ul>
-    <li>Lead empirical study of LLM hallucination in financial disclosures, scaling from a 30-firm pilot to 3,258 U.S. public firms and 180,000+ model responses over SEC 10-K / earnings-release text; target venue: Journal of Accounting Research</li>
+    <li>Study the robustness of LLM-extracted alternative-data signals from unstructured financial disclosures (SEC 10-K filings, earnings releases) as inputs to quantitative models, scaling from a 30-firm pilot to 3,258 U.S. public firms and 180,000+ model responses; target venue: Journal of Accounting Research</li>
     <li>Re-implemented SelfCheckGPT (RoBERTa BERTScore, LLM-as-judge, n-gram perplexity) from scratch after auditing the inherited codebase and finding a critical measurement bug — a length-based heuristic mislabeled as semantic similarity</li>
     <li>Designed a checkpointed, GPU-batched pipeline on an HPC/Slurm cluster with async concurrent API calls; empirically characterized nonlinear rate-limit behavior across API keys and tuned concurrency accordingly</li>
-    <li>Applied ANOVA and variance decomposition (η²): question type explains 31× more hallucination variance than firm size</li>
+    <li>Applied ANOVA and variance decomposition (η²): question cognitive demand explains 31× more inconsistency than firm size, evidence that signal reliability is task-structural rather than purely data-quality-driven</li>
   </ul>
 </div>
 
@@ -139,6 +139,18 @@
 
 <section>
 <h2>Selected Projects</h2>
+<div class="entry">
+  <div class="role">MicroWorld — Causal, Multi-Agent World Model for Markets (650+ GitHub stars)</div>
+  <ul>
+    <li>Core project of Alpha Flow: models market prices as the emergent equilibrium of interacting,
+      utility-maximizing investor-agents (causal structure) rather than fitting a single stochastic process to
+      correlations — targeting factor decay at its root</li>
+    <li>Framework parallels the derivation paradigm of the 2026 Fields Medal (Yu Deng, with Hong Wang) — N-body
+      Newtonian mechanics → Boltzmann equation — mapped to N investors under utility maximization → a
+      Fokker–Planck–Kolmogorov equation over market state via a McKean–Vlasov SDE limit</li>
+  </ul>
+  <div class="tagrow"><span class="tag">multi-agent world models</span><span class="tag">causal inference</span><span class="tag">mean-field games</span><span class="tag">McKean–Vlasov SDEs</span></div>
+</div>
 <div class="entry">
   <div class="role">Mathematical Framework for World Models in Quantitative Finance</div>
   <div class="tagrow"><span class="tag">SDE</span><span class="tag">mean-field games</span><span class="tag">stochastic control</span><span class="tag">LaTeX</span></div>
@@ -163,13 +175,13 @@
 </div>
 <div class="entry">
   <div class="entry-head">
-    <div>First Prize, National AI Innovation &amp; Entrepreneurship Competition</div>
-    <div class="when">2025</div>
+    <div>Rated "Excellent" (top tier), Tsinghua University Physics Bridging Program — earned direct-admission recommendation</div>
+    <div class="when">Jul 2024</div>
   </div>
 </div>
 <div class="entry">
   <div class="entry-head">
-    <div>Host &amp; Moderator, Future Science Prize AI Roundtable Forum — panel with faculty from Stanford, Princeton, and Tsinghua</div>
+    <div>Host &amp; Panel Guest, Future Science Prize AI Roundtable Forum — joint discussion with Prof. Mengdi Wang (Princeton, Director of AI Innovation Center), Prof. Wei-Ying Ma (President, Hong Kong Institute of AI and Science; ACM/IEEE Fellow), and Prof. Tim Kwang-Ting Cheng (Vice-President, HKUST)</div>
     <div class="when">Nov 2025</div>
   </div>
 </div>
@@ -179,7 +191,7 @@
 <h2>Skills</h2>
 <dl class="skills-grid">
   <dt>Programming</dt><dd>Python (PyTorch, NumPy, Pandas, scikit-learn), C++, MATLAB, LaTeX</dd>
-  <dt>ML / AI</dt><dd>Reinforcement learning (PPO, DDPG), diffusion &amp; generative models, transformers, LLM evaluation</dd>
+  <dt>ML / AI</dt><dd>Reinforcement learning (PPO, DDPG), diffusion &amp; generative models, transformers, LLM evaluation &amp; interpretability</dd>
   <dt>Mathematics</dt><dd>Stochastic calculus, convex optimization, probability theory, mean-field games</dd>
   <dt>Infra</dt><dd>HPC/Slurm, distributed pipelines, Git, Airflow</dd>
   <dt>Languages</dt><dd>English (fluent), Mandarin (native), Cantonese (conversational)</dd>
