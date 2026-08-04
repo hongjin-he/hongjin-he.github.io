@@ -37,6 +37,10 @@ nav .links a:hover{ color:var(--accent); }
 
 /* hero */
 header.hero{ padding:76px 0 56px; border-bottom:1px solid var(--rule); }
+.hero-top{ display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap; }
+.hero-photo{ width:112px; height:112px; border-radius:8px; object-fit:cover; border:1px solid var(--rule); flex-shrink:0; }
+.hero-text{ flex:1; min-width:260px; }
+@media (max-width:600px){ .hero-photo{ width:88px; height:88px; } }
 .eyebrow{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
 h1{ font-size:clamp(34px,6vw,52px); margin:0 0 6px; text-wrap:balance; letter-spacing:-0.5px; }
 .h1-sub{ color:var(--sub); font-size:19px; font-style:italic; margin:0 0 22px;}
@@ -109,14 +113,19 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
 
 <header class="hero" id="top">
   <div class="wrap">
-    <p class="eyebrow">Hong Kong · Stanford</p>
-    <h1>Hongjin He<span class="mono" style="font-weight:400;"> · 何泓锦</span></h1>
-    <p class="h1-sub">Quantitative research · world models for finance · generative methods</p>
-    <p class="lede">My core research interests are deep reinforcement learning, world models, and the
-      robustness of alternative data — at the intersection with quantitative finance. I'm currently an
-      undergraduate research assistant at both <strong>HKUST</strong> and <strong>Stanford</strong>, and
-      co-founder of <strong>Alpha Flow</strong> and quantitative research consultant at
-      <strong>WorldQuant</strong>.</p>
+    <div class="hero-top">
+      <img class="hero-photo" src="./assets/hongjin.jpg" alt="Hongjin He" />
+      <div class="hero-text">
+        <p class="eyebrow">Hong Kong · Stanford</p>
+        <h1>Hongjin He<span class="mono" style="font-weight:400;"> · 何泓锦</span></h1>
+        <p class="h1-sub">Quantitative research · world models for finance · generative methods</p>
+      </div>
+    </div>
+    <p class="lede">My core research interests are deep reinforcement learning, world models, the
+      robustness of alternative data, and LLM interpretability — at the intersection with quantitative
+      finance. I'm currently an undergraduate research assistant at both <strong>HKUST</strong> and
+      <strong>Stanford</strong>, and co-founder of <strong>Alpha Flow</strong> and quantitative research
+      consultant at <strong>WorldQuant</strong>.</p>
     <div class="hero-links">
       <a href="https://github.com/hongjin-he">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">LinkedIn ↗</a>
