@@ -112,14 +112,15 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <p class="eyebrow">Hong Kong · Stanford</p>
     <h1>Hongjin He<span class="mono" style="font-weight:400;"> · 何泓锦</span></h1>
     <p class="h1-sub">Quantitative research · world models for finance · generative methods</p>
-    <p class="lede">I work at the intersection of stochastic control and machine learning, building world-model
-      frameworks for markets and generative methods for systematic alpha discovery. Co-founder of
-      <strong>Alpha Flow</strong>; quantitative research consultant at <strong>WorldQuant</strong>;
-      undergraduate at HKUST, visiting Stanford in 2026.</p>
+    <p class="lede">My core research interests are deep reinforcement learning, world models, and the
+      robustness of alternative data — at the intersection with quantitative finance. I'm currently an
+      undergraduate research assistant at both <strong>HKUST</strong> and <strong>Stanford</strong>, and
+      co-founder of <strong>Alpha Flow</strong> and quantitative research consultant at
+      <strong>WorldQuant</strong>.</p>
     <div class="hero-links">
       <a href="https://github.com/hongjin-he">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">LinkedIn ↗</a>
-      <a href="mailto:hehongjinhkust0911@gmail.com">Email</a>
+      <a href="mailto:hhebh@connect.ust.hk">Email</a>
       <a href="./cv.html">CV ↗</a>
     </div>
   </div>
@@ -146,8 +147,9 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
 
       <div class="card">
         <h3>A Mathematical Framework for World Models in Quantitative Finance</h3>
-        <p>An SDE-based world-model formulation for markets — encoder, latent dynamics, and controller — extending
-          the Ha &amp; Schmidhuber world-model architecture with mean-field-game and stochastic-control structure.
+        <p>Stanford undergraduate research project, advised by <strong>Jehangir Amjad</strong>. An SDE-based
+          world-model formulation for markets — encoder, latent dynamics, and controller — extending the
+          Ha &amp; Schmidhuber world-model architecture with mean-field-game and stochastic-control structure.
           Covers Itô-integral state evolution, a hierarchical mean-field-game layer, and Lyapunov stability analysis
           of market regime transitions. Drafted as a theory paper targeting quantitative-finance journals.</p>
         <div class="tagrow"><span class="tag">SDEs</span><span class="tag">mean-field games</span><span class="tag">stochastic control</span><span class="tag">world models</span></div>
@@ -163,13 +165,16 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       </div>
 
       <div class="card">
-        <h3>LLM Hallucination in Financial Disclosures</h3>
-        <p>HKUST UROP with Prof. Tony Cho. Empirical study of hallucination in LLM responses to questions over SEC
-          10-K filings and earnings releases — scaled from a 30-firm pilot to 3,258 U.S. public companies and
-          180,000+ model responses. Re-implemented SelfCheckGPT (BERTScore, LLM-as-judge, n-gram perplexity) after
-          finding a measurement bug in the inherited codebase, and ran the study on an HPC/Slurm pipeline. Targeting
-          the <em>Journal of Accounting Research</em>.</p>
-        <div class="tagrow"><span class="tag">LLM evaluation</span><span class="tag">SelfCheckGPT</span><span class="tag">HPC</span><span class="tag">NLP</span></div>
+        <h3>Robustness of LLM-Extracted Signals from Financial Disclosures</h3>
+        <p>HKUST UROP with Prof. Tony Cho. Studies how reliable LLM-based extraction of alternative-data signals
+          from unstructured financial text (SEC 10-K filings, earnings releases) is as an input to quantitative
+          models — quantifying hallucination and inconsistency as a source of signal noise, across 3,258 U.S.
+          public companies and 180,000+ model responses. Re-implemented SelfCheckGPT (BERTScore, LLM-as-judge,
+          n-gram perplexity) from scratch after auditing the inherited codebase and finding a measurement bug, and
+          ran the full study on an HPC/Slurm pipeline. Variance decomposition shows question cognitive demand
+          explains 31× more inconsistency than firm size — evidence that signal reliability is task-structural,
+          not just data-quality-driven. Targeting the <em>Journal of Accounting Research</em>.</p>
+        <div class="tagrow"><span class="tag">alternative data</span><span class="tag">signal robustness</span><span class="tag">LLM evaluation</span><span class="tag">HPC</span></div>
       </div>
 
       <div class="card">
@@ -232,8 +237,18 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <h2>Honors &amp; Talks</h2>
     <div class="honors">
       <div class="honor"><span>Top 92 nationally, Tsinghua University Physics Climbing Program (gold-medal equivalent, Chinese Physics Olympiad track)</span><span class="when">2024</span></div>
-      <div class="honor"><span>First Prize, National AI Innovation &amp; Entrepreneurship Competition</span><span class="when">2025</span></div>
-      <div class="honor"><span>Host &amp; Moderator, Future Science Prize AI Roundtable Forum — panel with faculty from Stanford, Princeton, and Tsinghua</span><span class="when">Nov 2025</span></div>
+      <div class="honor"><span>Rated "Excellent" (top tier), Tsinghua University Physics Bridging Program — earned direct-admission recommendation</span><span class="when">Jul 2024</span></div>
+      <div class="honor">
+        <span>Host &amp; Panel Guest, Future Science Prize AI Roundtable Forum — joint discussion with faculty
+          including
+          <strong>Prof. Mengdi Wang</strong> (Professor, Princeton University; Director, AI Innovation Center),
+          <strong>Prof. Wei-Ying Ma</strong> (President, Hong Kong Institute of AI and Science; Chair Professor,
+          Tsinghua University; ACM Fellow and IEEE Fellow), and
+          <strong>Prof. Tim Kwang-Ting Cheng</strong> (Vice-President, HKUST; Chair, Asian Young Scientist
+          Fellowship 2025 Steering Committee)
+        </span>
+        <span class="when">Nov 2025</span>
+      </div>
     </div>
   </div>
 </section>
@@ -244,7 +259,7 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <p>I'm always happy to talk about world models, generative methods, or quantitative finance research —
       reach out by email or connect on LinkedIn.</p>
     <div class="contact-box">
-      <a href="mailto:hehongjinhkust0911@gmail.com">hehongjinhkust0911@gmail.com</a>
+      <a href="mailto:hhebh@connect.ust.hk">hhebh@connect.ust.hk</a>
       <a href="https://github.com/hongjin-he">github.com/hongjin-he</a>
       <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">linkedin.com/in/hongjinhe-hkust-edu</a>
     </div>
