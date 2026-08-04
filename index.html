@@ -155,6 +155,28 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <div class="card-list">
 
       <div class="card">
+        <h3>MicroWorld — A Causal, Multi-Agent World Model for Markets</h3>
+        <p>The core project of Alpha Flow (650+ GitHub stars). MicroWorld treats market prices as the emergent
+          equilibrium of many interacting, utility-maximizing investor-agents rather than a single stochastic
+          process to be curve-fit — modeling causal structure (who moves the market and why) instead of
+          correlation alone, which is what lets it target the factor-decay problem that plagues correlation-based
+          alpha mining at its root rather than patching around it.</p>
+        <p>The framework's mathematical backbone connects to the 2026 Fields Medal awarded to Yu Deng (with Hong
+          Wang) for the rigorous derivation of the Boltzmann equation from N-body Newtonian mechanics (Hilbert's
+          6th problem). The parallel is structural, not decorative: N particles under Newtonian mechanics →
+          N investors under utility maximization; the N → ∞ limit in both cases is a McKean–Vlasov SDE; the
+          Boltzmann equation's role is played here by a Fokker–Planck–Kolmogorov equation over market state; and
+          thermodynamic equilibrium in a gas corresponds to Nash equilibrium in a market. MicroWorld applies this
+          derivation paradigm to quantitative finance for the first time as a systematic framework, adding the
+          structure finance requires on top — event operators, hierarchical multi-agent layers, behavioral noise,
+          and a full engineering implementation.</p>
+        <p>In active technical conversation with faculty at institutions including the Fields Institute, and in
+          early-stage dialogue with early-stage-focused U.S. investment firms.</p>
+        <div class="tagrow"><span class="tag">multi-agent world models</span><span class="tag">causal inference</span><span class="tag">mean-field games</span><span class="tag">McKean–Vlasov SDEs</span></div>
+        <div class="links"><a href="https://github.com/hongjin-he/MicroWorld">repository ↗</a> <a href="https://hongjin-he.github.io/MicroWorld/">interactive 3D universe ↗</a></div>
+      </div>
+
+      <div class="card">
         <h3>A Mathematical Framework for World Models in Quantitative Finance</h3>
         <p>Stanford undergraduate research project, advised by <strong>Jehangir Amjad</strong>. An SDE-based
           world-model formulation for markets — encoder, latent dynamics, and controller — extending the
