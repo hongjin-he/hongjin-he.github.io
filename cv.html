@@ -1,0 +1,187 @@
+<title>Hongjin He — CV</title>
+<style>
+  :root{
+    --paper:#f7f5f0; --ink:#16233a; --sub:#5b6472; --accent:#9c7a3c; --rule:#d8d3c6; --paper-card:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#12161f; --ink:#eae6db; --sub:#a4a9b5; --accent:#c9a35f; --rule:#2a2f3b; --paper-card:#171b26; }
+  }
+  :root[data-theme="dark"]{ --paper:#12161f; --ink:#eae6db; --sub:#a4a9b5; --accent:#c9a35f; --rule:#2a2f3b; --paper-card:#171b26; }
+  :root[data-theme="light"]{ --paper:#f7f5f0; --ink:#16233a; --sub:#5b6472; --accent:#9c7a3c; --rule:#d8d3c6; --paper-card:#ffffff; }
+
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:15px; line-height:1.5;
+    max-width:780px; margin:0 auto; padding:48px 40px 80px;
+  }
+  @media print{ body{padding:0; max-width:100%;} .noprint{display:none;} }
+  @media (max-width:600px){ body{padding:28px 18px 60px;} }
+
+  header{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 24px;
+    border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:22px;}
+  h1{ font-size:29px; margin:0; letter-spacing:0.3px; font-weight:700; text-wrap:balance;}
+  .contact{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:12px; color:var(--sub); text-align:right; line-height:1.7;}
+  .contact a{color:var(--sub); text-decoration:none; border-bottom:1px dotted var(--sub);}
+  .contact a:hover{color:var(--accent); border-color:var(--accent);}
+
+  h2{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:11.5px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--accent); margin:26px 0 10px; padding-bottom:4px; border-bottom:1px solid var(--rule);}
+  section:first-of-type h2{margin-top:0;}
+
+  .entry{ margin-bottom:13px; }
+  .entry-head{ display:flex; justify-content:space-between; gap:16px; align-items:baseline; flex-wrap:wrap;}
+  .role{ font-weight:700; }
+  .org{ color:var(--sub); font-style:italic; }
+  .when{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:11.5px; color:var(--sub); white-space:nowrap;}
+  ul{ margin:5px 0 0; padding-left:19px; }
+  li{ margin-bottom:3px; }
+  li::marker{ color:var(--accent); }
+
+  .skills-grid{ display:grid; grid-template-columns:120px 1fr; gap:6px 14px; font-size:14px;}
+  .skills-grid dt{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:11px; color:var(--sub); letter-spacing:0.5px; padding-top:2px;}
+  .skills-grid dd{ margin:0; }
+
+  .tagrow{ display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;}
+  .tag{ font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size:10.5px; color:var(--accent); border:1px solid var(--rule); border-radius:3px; padding:1px 7px;}
+
+  .printbar{ position:fixed; top:16px; right:16px; }
+  .printbar button{ font-family: ui-monospace, monospace; font-size:12px; background:var(--ink); color:var(--paper); border:none; padding:8px 14px; border-radius:5px; cursor:pointer;}
+</style>
+
+<div class="noprint printbar"><button onclick="window.print()">Print / Save as PDF</button></div>
+
+<header>
+  <h1>Hongjin He <span style="font-weight:400;color:var(--sub);font-size:19px;">何泓锦</span></h1>
+  <div class="contact">
+    Hong Kong SAR · Stanford, CA (2026)<br/>
+    <a href="mailto:hehongjinhkust0911@gmail.com">hehongjinhkust0911@gmail.com</a><br/>
+    <a href="https://github.com/hongjin-he">github.com/hongjin-he</a> ·
+    <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">linkedin</a> ·
+    <a href="https://hongjin-he.github.io/">website</a>
+  </div>
+</header>
+
+<section>
+<h2>Education</h2>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">B.Sc., Risk Management &amp; Business Intelligence</span> — <span class="org">HKUST</span>, Extended Major in Artificial Intelligence · Honors Track in Mathematics</div>
+    <div class="when">Sep 2025 – 2029 (exp.)</div>
+  </div>
+  <ul>
+    <li>Core GPA 4.15 / Cumulative GPA 3.7</li>
+    <li>Coursework: Honors Calculus &amp; Probability, Discrete Mathematics, Stochastic Processes, Convex Optimization, Microeconomics</li>
+  </ul>
+</div>
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Visiting Student, Computer Science</span> — <span class="org">Stanford University</span></div>
+    <div class="when">Summer 2026</div>
+  </div>
+  <ul>
+    <li>STATS 217 (Stochastic Processes), CS 229 (Machine Learning), EE 364 (Convex Optimization)</li>
+  </ul>
+</div>
+</section>
+
+<section>
+<h2>Experience</h2>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Co-Founder &amp; Head of Quantitative Strategy</span> — <span class="org">Alpha Flow</span></div>
+    <div class="when">Sep 2025 – Present</div>
+  </div>
+  <ul>
+    <li>Lead theoretical design of a world-model framework for quantitative finance: an SDE-based latent state formulation (encoder–world-model–controller) extending Ha &amp; Schmidhuber-style world models to market dynamics, with mean-field-game and stochastic control components</li>
+    <li>Authored a mathematical framework covering Itô-integral state evolution, hierarchical mean-field games, and Lyapunov stability analysis of regime transitions; drafting a theory paper targeting quantitative-finance journals</li>
+    <li>Direct a small cross-functional team (AI research, quant strategy, risk) building toward an investable systematic strategy</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Quantitative Research Consultant</span> — <span class="org">WorldQuant</span> (BRAIN platform)</div>
+    <div class="when">Mar 2026 – Present</div>
+  </div>
+  <ul>
+    <li>Designed and submitted systematic alpha signals using diffusion-based generative search over factor structures, achieving IC = 0.148 on out-of-sample evaluation</li>
+    <li>Built a modular, real-time backtesting framework in Python to validate signal stability and turnover before submission</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Research Assistant, UROP</span> — <span class="org">HKUST</span> (PI: Prof. Tony Cho)</div>
+    <div class="when">May 2026 – Present</div>
+  </div>
+  <ul>
+    <li>Lead empirical study of LLM hallucination in financial disclosures, scaling from a 30-firm pilot to 3,258 U.S. public firms and 180,000+ model responses over SEC 10-K / earnings-release text; target venue: Journal of Accounting Research</li>
+    <li>Re-implemented SelfCheckGPT (RoBERTa BERTScore, LLM-as-judge, n-gram perplexity) from scratch after auditing the inherited codebase and finding a critical measurement bug — a length-based heuristic mislabeled as semantic similarity</li>
+    <li>Designed a checkpointed, GPU-batched pipeline on an HPC/Slurm cluster with async concurrent API calls; empirically characterized nonlinear rate-limit behavior across API keys and tuned concurrency accordingly</li>
+    <li>Applied ANOVA and variance decomposition (η²): question type explains 31× more hallucination variance than firm size</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Co-Founder, Quantitative Finance Arena</span> — <span class="org">GBA Redbird Entrepreneurs Alliance</span></div>
+    <div class="when">Nov 2025 – Present</div>
+  </div>
+  <ul>
+    <li>Co-built a quantitative trading strategy platform with Cantonese voice-input support, the first of its kind in the initiative</li>
+  </ul>
+</div>
+
+</section>
+
+<section>
+<h2>Selected Projects</h2>
+<div class="entry">
+  <div class="role">Mathematical Framework for World Models in Quantitative Finance</div>
+  <div class="tagrow"><span class="tag">SDE</span><span class="tag">mean-field games</span><span class="tag">stochastic control</span><span class="tag">LaTeX</span></div>
+</div>
+<div class="entry">
+  <div class="role">Diffusion-Based Alpha Mining</div>
+  <ul><li>Generative search over discrete factor structures for robust, low-correlation alpha discovery on noisy financial time series</li></ul>
+</div>
+<div class="entry">
+  <div class="role">Real-Time Quantitative Backtesting Framework</div>
+  <ul><li>Modular Python framework for evaluating systematic strategies against live and historical market data</li></ul>
+</div>
+</section>
+
+<section>
+<h2>Honors &amp; Leadership</h2>
+<div class="entry">
+  <div class="entry-head">
+    <div>Top 92 nationally, Tsinghua University Physics Climbing Program (Gold Medal–equivalent, Chinese Physics Olympiad track)</div>
+    <div class="when">2024</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-head">
+    <div>First Prize, National AI Innovation &amp; Entrepreneurship Competition</div>
+    <div class="when">2025</div>
+  </div>
+</div>
+<div class="entry">
+  <div class="entry-head">
+    <div>Host &amp; Moderator, Future Science Prize AI Roundtable Forum — panel with faculty from Stanford, Princeton, and Tsinghua</div>
+    <div class="when">Nov 2025</div>
+  </div>
+</div>
+</section>
+
+<section>
+<h2>Skills</h2>
+<dl class="skills-grid">
+  <dt>Programming</dt><dd>Python (PyTorch, NumPy, Pandas, scikit-learn), C++, MATLAB, LaTeX</dd>
+  <dt>ML / AI</dt><dd>Reinforcement learning (PPO, DDPG), diffusion &amp; generative models, transformers, LLM evaluation</dd>
+  <dt>Mathematics</dt><dd>Stochastic calculus, convex optimization, probability theory, mean-field games</dd>
+  <dt>Infra</dt><dd>HPC/Slurm, distributed pipelines, Git, Airflow</dd>
+  <dt>Languages</dt><dd>English (fluent), Mandarin (native), Cantonese (conversational)</dd>
+</dl>
+</section>
