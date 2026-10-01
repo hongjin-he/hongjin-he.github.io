@@ -2,7 +2,7 @@
 
 # hongjin-he.github.io
 
-**Personal academic website of HongJin HE (何泓锦)**
+**Personal academic website of Hongjin He**
 
 [![Live](https://img.shields.io/badge/live-hongjin--he.github.io-blue)](https://hongjin-he.github.io)
 [![HTML](https://img.shields.io/badge/stack-HTML%20%2F%20CSS%20%2F%20vanilla%20JS-orange)](index.html)
