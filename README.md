@@ -26,6 +26,7 @@ I am **Co-Founder & CTO of AlphaFlow**, leading the research and technical roadm
 | Section | Content |
 |---------|---------|
 | **Bio** | Research statement, AlphaFlow role, and ten-year ambition |
+| **AI Systems** | Agent harnesses · reusable skills · MCP/plugins · parallel orchestration · context distillation · evaluation |
 | **HKUST Research** | Palomar: LOB distributional forecasting · Si: robust decision-making · Cho: LLM signal robustness |
 | **Projects** | MicroWorld · Mathematical Framework for World Models · Diffusion-Based Alpha Mining · Backtesting Framework |
 | **Education** | Stanford (CS exchange 2025–26) · HKUST (RMBI + MATH + AI) |

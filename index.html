@@ -60,6 +60,13 @@ p{ margin:0 0 14px; max-width:64ch; }
 .vision-label,.group-label{ font-family:ui-monospace, monospace; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); }
 .vision p{ margin:5px 0 0; font-size:16px; }
 
+/* AI systems stack */
+.stack-intro{ color:var(--sub); margin-bottom:22px; }
+.stack-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.stack-item{ background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:18px 20px; box-shadow:var(--shadow); }
+.stack-item h3{ margin:0 0 7px; font-size:16px; }
+.stack-item p{ margin:0; font-size:14px; color:var(--sub); }
+
 /* research cards */
 .research-group{ margin:30px 0 12px; }
 .research-group:first-of-type{ margin-top:0; }
@@ -97,8 +104,10 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
 
 @media (max-width:600px){
   .tl-item{ grid-template-columns:1fr; gap:4px; }
-  nav .links{ gap:14px; }
+  nav .brand{ display:none; }
+  nav .links{ width:100%; justify-content:space-between; gap:10px; font-size:11px; }
   header.hero{ padding:56px 0 40px; }
+  .stack-grid{ grid-template-columns:1fr; }
 }
 </style>
 </head>
@@ -109,8 +118,8 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <a class="brand" href="#top">Hongjin He</a>
     <div class="links">
       <a href="#research">Research</a>
+      <a href="#ai-systems">AI Systems</a>
       <a href="#experience">Experience</a>
-      <a href="#honors">Honors</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -154,6 +163,41 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       <span class="vision-label">Ten-year ambition</span>
       <p>My goal is to turn world-model research into deployed investment systems and build AlphaFlow into the
         largest hedge-fund company in Asia-Pacific within the next decade.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ai-systems">
+  <div class="wrap">
+    <h2>AI Systems &amp; Agent Engineering</h2>
+    <p class="stack-intro">I build the systems around foundation models—not only prompts—including reusable
+      workflows, tool integrations, parallel execution, persistent context, and evaluation loops. I use these
+      capabilities across research, software delivery, literature audits, and evidence-grounded decision work.</p>
+    <div class="stack-grid">
+      <article class="stack-item">
+        <h3>Agent Harnesses &amp; Skills</h3>
+        <p>Reusable Claude and GPT/Codex skills, persistent goal loops, checkpoints, retries, and human approval
+          gates for reliable multi-step execution.</p>
+        <div class="tagrow"><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">workflow design</span></div>
+      </article>
+      <article class="stack-item">
+        <h3>MCP, Plugins &amp; Tool Use</h3>
+        <p>Model Context Protocol integrations, plugin-based tools, structured outputs, browser/computer-use
+          automation, and local file, shell, and web workflows.</p>
+        <div class="tagrow"><span class="tag">MCP</span><span class="tag">plugins</span><span class="tag">tool calling</span></div>
+      </article>
+      <article class="stack-item">
+        <h3>Multi-Agent Orchestration</h3>
+        <p>Parallel research and implementation with isolated write scopes, explicit handoffs, shared state,
+          and integration checks for concurrent agents.</p>
+        <div class="tagrow"><span class="tag">parallel agents</span><span class="tag">task routing</span><span class="tag">handoffs</span></div>
+      </article>
+      <article class="stack-item">
+        <h3>Context Distillation &amp; Evaluation</h3>
+        <p>Long-context compression into durable memory and decision records, plus regression checks and
+          evidence-bound evaluations for agent outputs.</p>
+        <div class="tagrow"><span class="tag">context engineering</span><span class="tag">knowledge distillation</span><span class="tag">eval harnesses</span></div>
+      </article>
     </div>
   </div>
 </section>
