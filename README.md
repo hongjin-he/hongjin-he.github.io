@@ -6,7 +6,6 @@
 
 [![Live](https://img.shields.io/badge/live-hongjin--he.github.io-blue)](https://hongjin-he.github.io)
 [![HTML](https://img.shields.io/badge/stack-HTML%20%2F%20CSS%20%2F%20vanilla%20JS-orange)](index.html)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 → **[hongjin-he.github.io](https://hongjin-he.github.io)**
 
@@ -16,9 +15,9 @@
 
 ## About
 
-Undergraduate at **HKUST** (RMBI + MATH + AI), on exchange at **Stanford** via the Interdisciplinary Honors Program. Research sits at the intersection of mathematical finance, stochastic analysis, and machine learning — with a focus on building rigorous theoretical foundations for world models applied to quantitative finance.
+Undergraduate at **HKUST** (RMBI + MATH + AI), and a 2026 visiting student at **Stanford** via the International Honors Program. My HKUST research now spans three lines: limit-order-book distributional forecasting with Prof. Daniel P. Palomar, robust decision-making under distribution shift with Prof. Nian Si, and the robustness of LLM-extracted financial signals with Prof. Tony Cho.
 
-Founder of **Alpha Flow** — a research initiative developing mathematical frameworks that unify SDEs, mean-field game theory, and generative modeling for financial applications.
+I am **Co-Founder & CTO of AlphaFlow**, leading the research and technical roadmap for MicroWorld. My ten-year ambition is to translate world-model research into deployed investment systems and build AlphaFlow into the largest hedge-fund company in Asia-Pacific.
 
 ---
 
@@ -26,9 +25,9 @@ Founder of **Alpha Flow** — a research initiative developing mathematical fram
 
 | Section | Content |
 |---------|---------|
-| **Bio** | Research statement and founding philosophy of Alpha Flow |
-| **Research Interests** | World models · Mathematical finance · Diffusion models · RL · LLM evaluation · Quant finance |
-| **Papers & Projects** | Mathematical Framework for World Models (preprint) · LLM Hallucination in Financial Disclosures (under review) · Diffusion-Flow Alpha Mining · Stanford AI Labs Ecosystem |
+| **Bio** | Research statement, AlphaFlow role, and ten-year ambition |
+| **HKUST Research** | Palomar: LOB distributional forecasting · Si: robust decision-making · Cho: LLM signal robustness |
+| **Projects** | MicroWorld · Mathematical Framework for World Models · Diffusion-Based Alpha Mining · Backtesting Framework |
 | **Education** | Stanford (CS exchange 2025–26) · HKUST (RMBI + MATH + AI) |
 
 ---
@@ -39,13 +38,10 @@ Founder of **Alpha Flow** — a research initiative developing mathematical fram
 arXiv preprint, July 2026  
 Introduces the *E-Game-C architecture* — Encoder (Lévy-Itô decomposition) → Mean-Field Game (HJB + FPK system) → Controller (Stochastic Lyapunov stability). Seven original theorems unifying stochastic decomposition, topological groupoids, and mean-field game theory for financial world models.
 
-### LLM Hallucination in Financial Disclosures
-Under peer review, 2026  
-Analysis of 5,552 U.S. firms' SEC filings across 3,600+ model responses. Identifies *D-type hallucination* — models fabricate confident answers when no source information exists. GPT-4o showed 54.8% improvement over GPT-3.5 in Prompt Score under controlled conditions.
-
----
-
 ## Projects
+
+### [MicroWorld](https://github.com/hongjin-he/MicroWorld)
+AlphaFlow's early-stage multi-agent market world-model program. It studies how institutional constraints, information, and interacting policies propagate through markets, while keeping simulation behavior, stress-testing utility, forecasting performance, and commercial validation as separate claims.
 
 ### [Diffusion-Flow Alpha Mining](https://github.com/hongjin-he/diffusion-alpha-mining)
 Applies diffusion models and flow matching to quantitative alpha factor discovery. Learns P(α) ∝ R(α) — sampling proportional to reward rather than argmax — generating diverse, low-correlation alpha pools. 3× improvement over random baseline (Mean IC: 0.148 vs ~0.05). Built on GFlowNet trajectory balance, which is mathematically equivalent to continuous flow matching on discrete expression graphs.

@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Hongjin He — CV</title>
 <style>
   :root{
@@ -17,7 +22,7 @@
     max-width:780px; margin:0 auto; padding:48px 40px 80px;
   }
   @media print{ body{padding:0; max-width:100%;} .noprint{display:none;} }
-  @media (max-width:600px){ body{padding:28px 18px 60px;} }
+  @media (max-width:600px){ body{padding:28px 18px 60px;} .printbar{position:static!important; display:flex; justify-content:flex-end; margin-bottom:14px;} }
 
   header{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px 24px;
     border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:22px;}
@@ -49,6 +54,8 @@
   .printbar{ position:fixed; top:16px; right:16px; }
   .printbar button{ font-family: ui-monospace, monospace; font-size:12px; background:var(--ink); color:var(--paper); border:none; padding:8px 14px; border-radius:5px; cursor:pointer;}
 </style>
+</head>
+<body>
 
 <div class="noprint printbar"><button onclick="window.print()">Print / Save as PDF</button></div>
 
@@ -91,13 +98,13 @@
 
 <div class="entry">
   <div class="entry-head">
-    <div><span class="role">Co-Founder &amp; Head of Quantitative Strategy</span> — <span class="org">Alpha Flow</span></div>
+    <div><span class="role">Co-Founder &amp; Chief Technology Officer</span> — <span class="org">AlphaFlow</span></div>
     <div class="when">Sep 2025 – Present</div>
   </div>
   <ul>
-    <li>Lead theoretical design of a world-model framework for quantitative finance: an SDE-based latent state formulation (encoder–world-model–controller) extending Ha &amp; Schmidhuber-style world models to market dynamics, with mean-field-game and stochastic control components</li>
-    <li>Authored a mathematical framework covering Itô-integral state evolution, hierarchical mean-field games, and Lyapunov stability analysis of regime transitions; drafting a theory paper targeting quantitative-finance journals</li>
-    <li>Direct a small cross-functional team (AI research, quant strategy, risk) building toward an investable systematic strategy</li>
+    <li>Lead the research and technical roadmap for MicroWorld, an early-stage multi-agent market world model for representing institutional constraints, information, and risk transmission</li>
+    <li>Develop the mathematical and engineering framework across stochastic dynamics, interacting agents, event operators, and reproducible evaluation</li>
+    <li>Near-term product direction: event-risk and stress-testing workflows for professional investment teams; long-term ambition: translate world-model research into deployed investment systems and build AlphaFlow into the largest hedge-fund company in Asia-Pacific within ten years</li>
   </ul>
 </div>
 
@@ -114,14 +121,35 @@
 
 <div class="entry">
   <div class="entry-head">
-    <div><span class="role">Research Assistant, UROP</span> — <span class="org">HKUST</span> (PI: Prof. Tony Cho)</div>
+    <div><span class="role">Undergraduate Researcher — Limit-Order-Book Distributional Forecasting</span> — <span class="org">HKUST</span> (Prof. Daniel P. Palomar)</div>
+    <div class="when">2026 – Present</div>
+  </div>
+  <ul>
+    <li>Study conditional return distributions from limit-order-book data using DeepLOB-style representations, heavy-tail density heads, calibration diagnostics, and matched unconditional baselines</li>
+    <li>Reproduced the FI-2010 classification baseline and built an end-to-end continuous-return density pipeline; current pilots have not yet established an advantage over a strong unconditional heavy-tail baseline</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Undergraduate Researcher — Robust Decision-Making</span> — <span class="org">HKUST</span> (Prof. Nian Si)</div>
+    <div class="when">2026 – Present</div>
+  </div>
+  <ul>
+    <li>Develop and stress-test methods in distributionally robust reinforcement learning, average-reward control, and heavy-tail robustness under regime shift</li>
+    <li>Use preregistered experiments, null tests, and certified computation to distinguish structural results, negative evidence, and exploratory pilots</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="entry-head">
+    <div><span class="role">Research Assistant, UROP — Robustness of LLM-Extracted Financial Signals</span> — <span class="org">HKUST</span> (Prof. Tony Cho)</div>
     <div class="when">May 2026 – Present</div>
   </div>
   <ul>
-    <li>Study the robustness of LLM-extracted alternative-data signals from unstructured financial disclosures (SEC 10-K filings, earnings releases) as inputs to quantitative models, scaling from a 30-firm pilot to 3,258 U.S. public firms and 180,000+ model responses; target venue: Journal of Accounting Research</li>
-    <li>Re-implemented SelfCheckGPT (RoBERTa BERTScore, LLM-as-judge, n-gram perplexity) from scratch after auditing the inherited codebase and finding a critical measurement bug — a length-based heuristic mislabeled as semantic similarity</li>
-    <li>Designed a checkpointed, GPU-batched pipeline on an HPC/Slurm cluster with async concurrent API calls; empirically characterized nonlinear rate-limit behavior across API keys and tuned concurrency accordingly</li>
-    <li>Applied ANOVA and variance decomposition (η²): question cognitive demand explains 31× more inconsistency than firm size, evidence that signal reliability is task-structural rather than purely data-quality-driven</li>
+    <li>Study the reliability of LLM-extracted signals from SEC filings and earnings disclosures as inputs to quantitative models</li>
+    <li>Re-implemented SelfCheckGPT evaluation components after auditing the inherited codebase and finding a measurement bug</li>
+    <li>Built a checkpointed HPC/Slurm pipeline and conducted by-question statistical analysis of task-dependent inconsistency</li>
   </ul>
 </div>
 
@@ -140,14 +168,12 @@
 <section>
 <h2>Selected Projects</h2>
 <div class="entry">
-  <div class="role">MicroWorld — Causal, Multi-Agent World Model for Markets (650+ GitHub stars)</div>
+  <div class="role">MicroWorld — Multi-Agent World Model for Markets</div>
   <ul>
-    <li>Core project of Alpha Flow: models market prices as the emergent equilibrium of interacting,
-      utility-maximizing investor-agents (causal structure) rather than fitting a single stochastic process to
-      correlations — targeting factor decay at its root</li>
-    <li>Framework parallels the derivation paradigm of the 2026 Fields Medal (Yu Deng, with Hong Wang) — N-body
-      Newtonian mechanics → Boltzmann equation — mapped to N investors under utility maximization → a
-      Fokker–Planck–Kolmogorov equation over market state via a McKean–Vlasov SDE limit</li>
+    <li>Core R&amp;D program of AlphaFlow: an early-stage simulator for studying how institutional constraints,
+      information, and interacting policies propagate through markets</li>
+    <li>Current work separates simulation behavior, stress-testing utility, and forecasting performance into
+      distinct evaluation claims; no real-market forecasting or commercial validation is asserted</li>
   </ul>
   <div class="tagrow"><span class="tag">multi-agent world models</span><span class="tag">causal inference</span><span class="tag">mean-field games</span><span class="tag">McKean–Vlasov SDEs</span></div>
 </div>
@@ -197,3 +223,5 @@
   <dt>Languages</dt><dd>English (fluent), Mandarin (native), Cantonese (conversational)</dd>
 </dl>
 </section>
+</body>
+</html>

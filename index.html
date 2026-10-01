@@ -56,8 +56,13 @@ p{ margin:0 0 14px; max-width:64ch; }
 
 /* about */
 .about-grid{ display:grid; grid-template-columns: 1fr; gap:6px; }
+.vision{ margin-top:24px; padding:18px 20px; border-left:3px solid var(--accent); background:var(--card); box-shadow:var(--shadow); }
+.vision-label,.group-label{ font-family:ui-monospace, monospace; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); }
+.vision p{ margin:5px 0 0; font-size:16px; }
 
 /* research cards */
+.research-group{ margin:30px 0 12px; }
+.research-group:first-of-type{ margin-top:0; }
 .card-list{ display:flex; flex-direction:column; gap:18px; }
 .card{ background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:20px 22px; box-shadow:var(--shadow); }
 .card h3{ margin:0 0 8px; font-size:18px; }
@@ -121,11 +126,10 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
         <p class="h1-sub">Quantitative research · world models for finance · generative methods</p>
       </div>
     </div>
-    <p class="lede">My core research interests are deep reinforcement learning, world models, the
-      robustness of alternative data, and LLM interpretability — at the intersection with quantitative
-      finance. I'm currently an undergraduate research assistant at both <strong>HKUST</strong> and
-      <strong>Stanford</strong>, and co-founder of <strong>Alpha Flow</strong> and quantitative research
-      consultant at <strong>WorldQuant</strong>.</p>
+    <p class="lede">My work sits at the intersection of deep reinforcement learning, world models,
+      robust decision-making, and quantitative finance. At <strong>HKUST</strong>, I am developing three
+      research lines with Prof. Daniel P. Palomar, Prof. Nian Si, and Prof. Tony Cho. I am also the
+      <strong>Co-Founder &amp; CTO of AlphaFlow</strong>, where I lead the technical development of MicroWorld.</p>
     <div class="hero-links">
       <a href="https://github.com/hongjin-he">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/hongjinhe-hkust-edu">LinkedIn ↗</a>
@@ -146,6 +150,11 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <p>My background started in physics — I placed 92nd nationally in the Tsinghua University Physics Climbing
       Program, roughly gold-medal level on the Chinese Physics Olympiad track — before moving toward stochastic
       calculus, convex optimization, and machine learning applied to financial markets.</p>
+    <div class="vision">
+      <span class="vision-label">Ten-year ambition</span>
+      <p>My goal is to turn world-model research into deployed investment systems and build AlphaFlow into the
+        largest hedge-fund company in Asia-Pacific within the next decade.</p>
+    </div>
   </div>
 </section>
 
@@ -154,25 +163,49 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <h2>Research &amp; Projects</h2>
     <div class="card-list">
 
+      <div class="research-group"><span class="group-label">HKUST · Three Research Lines</span></div>
+
       <div class="card">
-        <h3>MicroWorld — A Causal, Multi-Agent World Model for Markets</h3>
-        <p>The core project of Alpha Flow (650+ GitHub stars). MicroWorld treats market prices as the emergent
-          equilibrium of many interacting, utility-maximizing investor-agents rather than a single stochastic
-          process to be curve-fit — modeling causal structure (who moves the market and why) instead of
-          correlation alone, which is what lets it target the factor-decay problem that plagues correlation-based
-          alpha mining at its root rather than patching around it.</p>
-        <p>The framework's mathematical backbone connects to the 2026 Fields Medal awarded to Yu Deng (with Hong
-          Wang) for the rigorous derivation of the Boltzmann equation from N-body Newtonian mechanics (Hilbert's
-          6th problem). The parallel is structural, not decorative: N particles under Newtonian mechanics →
-          N investors under utility maximization; the N → ∞ limit in both cases is a McKean–Vlasov SDE; the
-          Boltzmann equation's role is played here by a Fokker–Planck–Kolmogorov equation over market state; and
-          thermodynamic equilibrium in a gas corresponds to Nash equilibrium in a market. MicroWorld applies this
-          derivation paradigm to quantitative finance for the first time as a systematic framework, adding the
-          structure finance requires on top — event operators, hierarchical multi-agent layers, behavioral noise,
-          and a full engineering implementation.</p>
-        <p>In active technical conversation with faculty at institutions including the Fields Institute, and in
-          early-stage dialogue with early-stage-focused U.S. investment firms.</p>
-        <div class="tagrow"><span class="tag">multi-agent world models</span><span class="tag">causal inference</span><span class="tag">mean-field games</span><span class="tag">McKean–Vlasov SDEs</span></div>
+        <h3>Distributional Forecasting from Limit Order Books — Prof. Daniel P. Palomar</h3>
+        <p>Studies whether a DeepLOB-style model can forecast the full conditional distribution of short-horizon
+          returns rather than only an up/flat/down label. The work has reproduced the FI-2010 classification
+          baseline and built an end-to-end continuous-return density pipeline on raw order-book data. Current
+          pilots show that strong unconditional heavy-tail baselines remain difficult to beat, so the next step is
+          to isolate whether the bottleneck lies in the signal, target, backbone, or distributional head.</p>
+        <div class="tagrow"><span class="tag">limit order books</span><span class="tag">DeepLOB</span><span class="tag">distributional forecasting</span><span class="tag">calibration</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Robust Decision-Making under Distribution Shift — Prof. Nian Si</h3>
+        <p>Develops and stress-tests ideas in distributionally robust reinforcement learning, average-reward
+          control, and heavy-tail robustness. The research program uses preregistered experiments and null tests
+          to separate structural results from trading claims; it includes calibrated uncertainty sets, certified
+          computation, negative evidence on crisis-timing overlays, and a pilot on robust estimation under
+          heavy-tailed rewards.</p>
+        <div class="tagrow"><span class="tag">robust RL</span><span class="tag">distribution shift</span><span class="tag">average reward</span><span class="tag">heavy tails</span></div>
+      </div>
+
+      <div class="card">
+        <h3>Robustness of LLM-Extracted Financial Signals — Prof. Tony Cho</h3>
+        <p>Studies how reliably language models extract decision-relevant signals from SEC filings and earnings
+          disclosures. The project combines a large-scale model-response pipeline with semantic-consistency
+          metrics and by-question statistical analysis, focusing on when hallucination and inconsistency make a
+          plausible answer unsuitable as quantitative-model input.</p>
+        <div class="tagrow"><span class="tag">alternative data</span><span class="tag">LLM evaluation</span><span class="tag">financial disclosures</span><span class="tag">HPC</span></div>
+      </div>
+
+      <div class="research-group"><span class="group-label">AlphaFlow · Company &amp; Independent Work</span></div>
+
+      <div class="card">
+        <h3>AlphaFlow &amp; MicroWorld — World Models for Investment Decisions</h3>
+        <p>As Co-Founder &amp; CTO of AlphaFlow, I lead the research and technical roadmap for MicroWorld: an
+          early-stage, multi-agent market world model designed to represent how institutional constraints,
+          information, and interacting policies propagate through markets. The near-term focus is reproducible
+          event-risk and stress-testing workflows for professional investment teams; the long-term goal is a
+          deployable world-model foundation for investment research and portfolio decisions.</p>
+        <p>MicroWorld is currently a research simulator and evaluation program. Its simulated behavior is not yet
+          evidence of forecasting performance or real-market commercial validation.</p>
+        <div class="tagrow"><span class="tag">multi-agent world models</span><span class="tag">market simulation</span><span class="tag">risk transmission</span><span class="tag">investment systems</span></div>
         <div class="links"><a href="https://github.com/hongjin-he/MicroWorld">repository ↗</a> <a href="https://hongjin-he.github.io/MicroWorld/">interactive 3D universe ↗</a></div>
       </div>
 
@@ -196,19 +229,6 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       </div>
 
       <div class="card">
-        <h3>Robustness of LLM-Extracted Signals from Financial Disclosures</h3>
-        <p>HKUST UROP with Prof. Tony Cho. Studies how reliable LLM-based extraction of alternative-data signals
-          from unstructured financial text (SEC 10-K filings, earnings releases) is as an input to quantitative
-          models — quantifying hallucination and inconsistency as a source of signal noise, across 3,258 U.S.
-          public companies and 180,000+ model responses. Re-implemented SelfCheckGPT (BERTScore, LLM-as-judge,
-          n-gram perplexity) from scratch after auditing the inherited codebase and finding a measurement bug, and
-          ran the full study on an HPC/Slurm pipeline. Variance decomposition shows question cognitive demand
-          explains 31× more inconsistency than firm size — evidence that signal reliability is task-structural,
-          not just data-quality-driven. Targeting the <em>Journal of Accounting Research</em>.</p>
-        <div class="tagrow"><span class="tag">alternative data</span><span class="tag">signal robustness</span><span class="tag">LLM evaluation</span><span class="tag">HPC</span></div>
-      </div>
-
-      <div class="card">
         <h3>Real-Time Quantitative Backtesting Framework</h3>
         <p>A modular Python framework for evaluating systematic trading strategies against live and historical
           market data, built to support rapid iteration on the alpha-mining and world-model work above.</p>
@@ -227,10 +247,10 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       <div class="tl-item">
         <div class="tl-when">2025 – present</div>
         <div>
-          <div class="tl-role">Co-Founder &amp; Head of Quantitative Strategy</div>
-          <div class="tl-org">Alpha Flow</div>
-          <div class="tl-desc">Lead the world-model research framework and direct a small cross-functional team
-            building toward an investable systematic strategy.</div>
+          <div class="tl-role">Co-Founder &amp; Chief Technology Officer</div>
+          <div class="tl-org">AlphaFlow</div>
+          <div class="tl-desc">Lead the research and technical roadmap for MicroWorld, with an initial focus on
+            multi-agent market simulation, institutional risk transmission, and decision-support workflows.</div>
         </div>
       </div>
       <div class="tl-item">
@@ -245,10 +265,10 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       <div class="tl-item">
         <div class="tl-when">2026 – present</div>
         <div>
-          <div class="tl-role">Research Assistant, UROP</div>
-          <div class="tl-org">HKUST — PI: Prof. Tony Cho</div>
-          <div class="tl-desc">Lead a large-scale empirical study of LLM hallucination in financial disclosures,
-            from data pipeline to statistical inference.</div>
+          <div class="tl-role">Undergraduate Researcher — Three Research Lines</div>
+          <div class="tl-org">HKUST — Prof. Daniel P. Palomar, Prof. Nian Si &amp; Prof. Tony Cho</div>
+          <div class="tl-desc">Work across limit-order-book distributional forecasting, robust decision-making
+            under distribution shift, and the reliability of LLM-extracted signals from financial disclosures.</div>
         </div>
       </div>
       <div class="tl-item">
