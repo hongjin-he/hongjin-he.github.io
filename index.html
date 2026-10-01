@@ -106,6 +106,8 @@ p{ margin:0 0 14px; max-width:64ch; }
 .honor-main{ display:flex; align-items:flex-start; gap:12px; }
 .honor-mark{ width:38px; height:38px; flex:0 0 38px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:#fff; overflow:hidden; }
 .honor-mark img{ width:32px; height:32px; object-fit:contain; }
+.honor-mark.wordmark{ width:54px; flex-basis:54px; }
+.honor-mark.wordmark img{ width:48px; height:auto; }
 .honor .when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); white-space:nowrap; padding-top:2px;}
 
 /* contact / footer */
@@ -339,13 +341,14 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       <div class="honor"><span class="honor-main"><span class="honor-mark"><img src="./assets/logos/tsinghua.png" alt="Tsinghua University logo" /></span><span>Top 92 nationally, Tsinghua University Physics Climbing Program (gold-medal equivalent, Chinese Physics Olympiad track)</span></span><span class="when">Dec 2023 – Feb 2024</span></div>
       <div class="honor"><span>Rated "Excellent" (top tier), Tsinghua University Physics Bridging Program — earned direct-admission recommendation</span><span class="when">Mar – Aug 2024</span></div>
       <div class="honor">
-        <span>Host &amp; Panel Guest, Future Science Prize AI Roundtable Forum — joint discussion with faculty
-          including
-          <strong>Prof. Mengdi Wang</strong> (Professor, Princeton University; Director, AI Innovation Center),
-          <strong>Prof. Wei-Ying Ma</strong> (President, Hong Kong Institute of AI and Science; Chair Professor,
-          Tsinghua University; ACM Fellow and IEEE Fellow), and
-          <strong>Prof. Tim Kwang-Ting Cheng</strong> (Vice-President, HKUST; Chair, Asian Young Scientist
-          Fellowship 2025 Steering Committee)
+        <span class="honor-main"><span class="honor-mark wordmark"><img src="./assets/logos/future-science-prize.png" alt="Future Science Prize logo" /></span><span>Host &amp; Panel Guest, Future Science Prize AI Roundtable Forum — joint discussion with faculty
+            including
+            <strong>Prof. Mengdi Wang</strong> (Professor, Princeton University; Director, AI Innovation Center),
+            <strong>Prof. Wei-Ying Ma</strong> (President, Hong Kong Institute of AI and Science; Chair Professor,
+            Tsinghua University; ACM Fellow and IEEE Fellow), and
+            <strong>Prof. Tim Kwang-Ting Cheng</strong> (Vice-President, HKUST; Chair, Asian Young Scientist
+            Fellowship 2025 Steering Committee)
+          </span>
         </span>
         <span class="when">Nov 2025</span>
       </div>
