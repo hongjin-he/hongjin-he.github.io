@@ -15,7 +15,7 @@
 
 ## About
 
-Undergraduate at **HKUST** (RMBI + MATH + AI), and a 2026 visiting student at **Stanford** via the International Honors Program. My HKUST research now spans three lines: limit-order-book distributional forecasting with Prof. Daniel P. Palomar, robust decision-making under distribution shift with Prof. Nian Si, and the robustness of LLM-extracted financial signals with Prof. Tony Cho.
+Undergraduate at **HKUST**, majoring in **Risk Management & Business Intelligence**, minoring in **Mathematics**, and pursuing an **Extended Major in Artificial Intelligence**. I am also a 2026 visiting student at **Stanford** via the International Honors Program. My HKUST research now spans three lines: limit-order-book distributional forecasting with Prof. Daniel P. Palomar, robust decision-making under distribution shift with Prof. Nian Si, and the robustness of LLM-extracted financial signals with Prof. Tony Cho.
 
 I am **Co-Founder & CTO of AlphaFlow**, leading the research and technical roadmap for MicroWorld. My ten-year ambition is to translate world-model research into deployed investment systems and build AlphaFlow into the largest hedge-fund company in Asia-Pacific.
 
@@ -29,7 +29,7 @@ I am **Co-Founder & CTO of AlphaFlow**, leading the research and technical roadm
 | **AI Systems** | Agent harnesses · reusable skills · MCP/plugins · parallel orchestration · context distillation · evaluation |
 | **HKUST Research** | Palomar: LOB distributional forecasting · Si: robust decision-making · Cho: LLM signal robustness |
 | **Projects** | MicroWorld · Mathematical Framework for World Models · Diffusion-Based Alpha Mining · Backtesting Framework |
-| **Education** | Stanford (CS exchange 2025–26) · HKUST (RMBI + MATH + AI) |
+| **Education** | Stanford (CS exchange 2025–26) · HKUST (RMBI major · Mathematics minor · Extended Major in AI) |
 
 ---
 
