@@ -26,7 +26,6 @@ I am **Co-Founder & CTO of AlphaFlow**, leading the research and technical roadm
 | Section | Content |
 |---------|---------|
 | **Bio** | Research statement, AlphaFlow role, and ten-year ambition |
-| **AI Systems** | Agent harnesses · reusable skills · MCP/plugins · parallel orchestration · context distillation · evaluation |
 | **HKUST Research** | Palomar: LOB distributional forecasting · Si: robust decision-making · Cho: LLM signal robustness |
 | **Projects** | MicroWorld · Mathematical Framework for World Models · Diffusion-Based Alpha Mining · Backtesting Framework |
 | **Education** | Stanford (CS exchange 2025–26) · HKUST (RMBI major · Mathematics minor · Extended Major in AI) |
@@ -43,6 +42,8 @@ Introduces the *E-Game-C architecture* — Encoder (Lévy-Itô decomposition) �
 
 ### [MicroWorld](https://github.com/hongjin-he/MicroWorld)
 AlphaFlow's early-stage multi-agent market world-model program. It studies how institutional constraints, information, and interacting policies propagate through markets, while keeping simulation behavior, stress-testing utility, forecasting performance, and commercial validation as separate claims.
+
+Company website: [microworldmarkets.com](https://microworldmarkets.com/)
 
 ### [Diffusion-Flow Alpha Mining](https://github.com/hongjin-he/diffusion-alpha-mining)
 Applies diffusion models and flow matching to quantitative alpha factor discovery. Learns P(α) ∝ R(α) — sampling proportional to reward rather than argmax — generating diverse, low-correlation alpha pools. 3× improvement over random baseline (Mean IC: 0.148 vs ~0.05). Built on GFlowNet trajectory balance, which is mathematically equivalent to continuous flow matching on discrete expression graphs.
