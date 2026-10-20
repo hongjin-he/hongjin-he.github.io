@@ -1,0 +1,10 @@
+# Hongjin He (HongJin HE, 何泓錦)
+
+> HKUST undergraduate (Risk Management & Business Intelligence, Mathematics minor, Extended Major in AI) researching world models, reinforcement learning and quantitative finance. Co-Founder & CTO of AlphaFlow (MicroWorld).
+
+## Links
+- [Homepage](https://hongjin-he.github.io/): about, research, experience, honors
+- [CV](https://hongjin-he.github.io/cv.html)
+- [GitHub](https://github.com/hongjin-he)
+- [LinkedIn](https://www.linkedin.com/in/hongjinhe-hkust-edu)
+- [MicroWorld](https://github.com/hongjin-he/MicroWorld)
