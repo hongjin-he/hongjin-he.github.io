@@ -6,5 +6,5 @@
 - [Homepage](https://hongjin-he.github.io/): about, research, experience, honors
 - [CV](https://hongjin-he.github.io/cv.html)
 - [GitHub](https://github.com/hongjin-he)
-- [LinkedIn](https://www.linkedin.com/in/hongjinhe-hkust-edu)
+- [LinkedIn](https://www.linkedin.com/in/hongjinhe-hkust)
 - [MicroWorld](https://github.com/hongjin-he/MicroWorld)
