@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#10131b"/>
+<title>World Models in Finance: What They Are and How MicroWorld Builds One | Hongjin He</title>
+<meta name="description" content="A plain explanation of world models for quantitative finance and market simulation: how they differ from factor models and backtests, and how MicroWorld simulates liquidation cascades on Hyperliquid."/>
+<link rel="canonical" href="https://hongjin-he.github.io/world-models-in-finance/"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="World Models in Finance: What They Are and How MicroWorld Builds One"/>
+<meta property="og:description" content="World models for quantitative finance and market simulation, explained, with MicroWorld as a worked example."/>
+<meta property="og:url" content="https://hongjin-he.github.io/world-models-in-finance/"/>
+<meta property="og:image" content="https://hongjin-he.github.io/assets/hongjin.jpg"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Article",
+      "headline":"World Models in Finance: What They Are and How MicroWorld Builds One",
+      "author":{"@id":"https://hongjin-he.github.io/#person"},
+      "mainEntityOfPage":"https://hongjin-he.github.io/world-models-in-finance/",
+      "dateModified":"2026-10-21",
+      "about":["World models","Quantitative finance","Market simulation","Agent-based modeling"]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"What is a world model in finance?","acceptedAnswer":{"@type":"Answer","text":"A world model of finance learns or specifies how a market evolves: the state of the market (positions, leverage, liquidity), the agents acting on it, and the rules that bind them such as margin and liquidation. It lets you roll the system forward under a shock and see what happens, instead of only predicting a return from features."}},
+        {"@type":"Question","name":"How is a world model different from a factor model or a backtest?","acceptedAnswer":{"@type":"Answer","text":"A factor model learns correlations between features and returns. A backtest replays one historical path. A world model represents the mechanism, so participants can react to each other and to hypothetical shocks that never happened in the data."}},
+        {"@type":"Question","name":"What is MicroWorld?","acceptedAnswer":{"@type":"Answer","text":"MicroWorld is a world model of finance being built at AlphaFlow. It starts on Hyperliquid, where every position is public, reconstructs account states and simulates how a price shock cascades through forced liquidations. The engine is closed-source; a public showcase is available on GitHub."}},
+        {"@type":"Question","name":"Who is working on MicroWorld?","acceptedAnswer":{"@type":"Answer","text":"MicroWorld is built by the AlphaFlow team. Hongjin He (HongJin HE) is Co-Founder and CTO."}}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{color-scheme:dark;--paper:#10131b;--ink:#eae6db;--sub:#9aa0ac;--accent:#c9a35f;--rule:#262b38}
+html,body{margin:0;background:var(--paper);color:var(--ink)}
+body{font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+main{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+a{color:var(--accent)}
+h1{font-size:30px;line-height:1.25;margin:8px 0 18px}
+h2{font-size:21px;margin:36px 0 8px;border-top:1px solid var(--rule);padding-top:22px}
+.crumb{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--sub)}
+.note{color:var(--sub);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+<p class="crumb"><a href="/">Hongjin He</a> / Notes</p>
+<h1>World Models in Finance: What They Are and How MicroWorld Builds One</h1>
+<p class="note">By <a href="/">Hongjin He</a> (HongJin HE, 何泓錦), Co-Founder &amp; CTO of AlphaFlow. Updated 2026-10-21.</p>
+
+<h2>What is a world model in finance?</h2>
+<p>A world model of finance describes how a market evolves. It represents the <strong>state</strong> of the market (who holds what, at what leverage, with what liquidity), the <strong>agents</strong> that act on that state, and the <strong>rules</strong> that bind them, such as margin requirements and liquidation. Given a shock, it rolls the system forward and shows what happens next.</p>
+
+<h2>How is this different from a factor model or a backtest?</h2>
+<p>A factor model learns correlations between features and returns. A backtest replays one historical path. Neither can answer "what happens if this shock hits a market where participants react to one another?" A world model represents the mechanism, so it can simulate events that never appeared in the data. Factor models learn correlations; world models aim at causal structure.</p>
+
+<h2>Why start where every position is public?</h2>
+<p>On on-chain exchanges such as Hyperliquid, every account's positions, leverage and liquidation price are public. That makes it possible to reconstruct the state of the market and to check simulated behaviour against what actually happened. In traditional markets that state is hidden, so on-chain markets are a natural first testbed.</p>
+
+<h2>MicroWorld: a worked example</h2>
+<p>MicroWorld reconstructs real account states on Hyperliquid and simulates how a price shock cascades through forced liquidations. In one public snapshot (13 October 2026) the engine covered roughly 3,100 accounts and about $7.8B of notional. In an example shock, BTC falling 8% in 15 minutes under stressed liquidity, the market move of about 9.7% grew to about 11.7% once forced liquidations fed back. This is an illustration on literature-standard parameters, not a forecast.</p>
+<p>The longer-term goal is for every participant to be played by an AI agent standing in for a real one, so that important financial decisions can be simulated before the market sees them. See the <a href="https://github.com/hongjin-he/microworld-showcase">public showcase on GitHub</a> and the <a href="https://microworldmarkets.com">AlphaFlow website</a>. The engine itself is closed-source.</p>
+
+<h2>Further reading</h2>
+<ul>
+<li><a href="https://github.com/hongjin-he/awesome-world-models-for-finance">Awesome World Models for Finance</a>, a curated reading list</li>
+<li><a href="https://github.com/hongjin-he/Mathematical-Framework-For-MicroUniverse">Mathematical Framework for MicroUniverse</a>, a mathematical theory of world models for quantitative finance</li>
+</ul>
+
+<h2>FAQ</h2>
+<p><strong>Who works on MicroWorld?</strong> The AlphaFlow team; I am Co-Founder and CTO.</p>
+<p><strong>Is it open source?</strong> The engine is closed-source. The showcase and the mathematical framework are public.</p>
+<p><strong>Where can I follow the work?</strong> <a href="https://github.com/hongjin-he">GitHub</a> and <a href="https://www.linkedin.com/in/hongjinhe-hkust">LinkedIn</a>.</p>
+</main>
+</body>
+</html>

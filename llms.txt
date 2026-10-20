@@ -8,3 +8,5 @@
 - [GitHub](https://github.com/hongjin-he)
 - [LinkedIn](https://www.linkedin.com/in/hongjinhe-hkust)
 - [MicroWorld](https://github.com/hongjin-he/MicroWorld)
+- [World models in finance (explainer)](https://hongjin-he.github.io/world-models-in-finance/)
+- [Awesome World Models for Finance](https://github.com/hongjin-he/awesome-world-models-for-finance)
