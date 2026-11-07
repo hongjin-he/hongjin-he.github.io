@@ -2,9 +2,14 @@
 
 > HKUST undergraduate (Risk Management & Business Intelligence, Mathematics minor, Extended Major in AI) researching world models, reinforcement learning and quantitative finance. Co-Founder & CTO of AlphaFlow (MicroWorld).
 
+## Publications
+- Hongjin He. "From Sharpe Ratios to Executable Evidence: A Reproducibility Case Study of a Financial DRL Ensemble." SSRN 7665158 (2026): https://papers.ssrn.com/abstract=7665158. Under review at TMLR.
+
 ## Links
 - [Homepage](https://hongjin-he.github.io/): about, research, experience, honors
 - [CV](https://hongjin-he.github.io/cv.html)
+- [Google Scholar](https://scholar.google.com/citations?user=8CrClmkAAAAJ)
+- [SSRN author page](https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=13762508)
 - [GitHub](https://github.com/hongjin-he)
 - [LinkedIn](https://www.linkedin.com/in/hongjinhe-hkust)
 - [MicroWorld](https://github.com/hongjin-he/MicroWorld)
