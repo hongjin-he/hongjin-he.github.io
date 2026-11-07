@@ -4,6 +4,7 @@
 
 ## Publications
 - Hongjin He. "From Sharpe Ratios to Executable Evidence: A Reproducibility Case Study of a Financial DRL Ensemble." SSRN 7665158 (2026): https://papers.ssrn.com/abstract=7665158. Under review at TMLR.
+- Hongjin He. "Sharp Ranking Bounds for Frozen Binary Forecasts with Unresolved Outcomes." Under review at Journal of Forecasting.
 
 ## Links
 - [Homepage](https://hongjin-he.github.io/): about, research, experience, honors
