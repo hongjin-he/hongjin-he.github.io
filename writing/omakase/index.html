@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#10131b"/>
+<title>當我吃 Omakase 時，我在想些什麼 · What I Think About When I Eat Omakase – Hongjin He</title>
+<meta name="description" content="當我吃 Omakase 時，我在想些什麼 (What I Think About When I Eat Omakase) by Hongjin He (何泓錦)."/>
+<meta name="author" content="Hongjin He"/>
+<link rel="canonical" href="https://hongjin-he.github.io/writing/omakase/"/>
+<style>
+:root{
+  color-scheme:dark;
+  --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none;
+}
+:root[data-theme="dark"]{ --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none; }
+:root[data-theme="light"]{ --paper:#f7f5f0; --ink:#16233a; --sub:#5b6472; --accent:#9c7a3c; --rule:#ddd8ca; --card:#ffffff; --shadow: 0 1px 2px rgba(22,35,58,0.06); }
+
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.6;
+}
+.mono{ font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+a{color:var(--ink);}
+::selection{ background:var(--accent); color:var(--paper); }
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+
+/* nav */
+nav{ position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+nav .wrap{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; padding-bottom:14px; }
+nav .brand{ font-weight:700; letter-spacing:0.5px; text-decoration:none; }
+nav .links{ display:flex; gap:20px; font-family: ui-monospace, monospace; font-size:12.5px; letter-spacing:0.5px; }
+nav .links a{ text-decoration:none; color:var(--sub); }
+nav .links a:hover{ color:var(--accent); }
+
+/* fixed profile + scrolling content */
+.page-shell{ max-width:1040px; margin:0 auto; padding:0 28px; display:grid; grid-template-columns:210px minmax(0,1fr); gap:64px; align-items:start; }
+.profile-sidebar{ position:sticky; top:92px; align-self:start; padding:64px 0 48px; }
+.profile-name{ font-size:28px; margin:0 0 20px; letter-spacing:-0.3px; }
+.hero-photo-frame{ width:210px; aspect-ratio:3/4; border-radius:8px; overflow:hidden; border:1px solid var(--rule); box-shadow:var(--shadow); }
+.hero-photo{ width:100%; height:100%; object-fit:cover; object-position:center 34%; transform:translateX(7px) scale(1.5); transform-origin:center 34%; display:block; }
+.profile-links{ display:flex; flex-direction:column; align-items:flex-start; gap:7px; margin-top:22px; font-family:ui-monospace, monospace; font-size:12.5px; }
+.profile-links a{ color:var(--sub); text-decoration:none; border-bottom:1px solid var(--rule); }
+.profile-links a:hover{ color:var(--accent); border-color:var(--accent); }
+.content-column{ min-width:0; }
+.content-column .wrap{ max-width:none; padding-left:0; padding-right:0; }
+
+/* hero */
+header.hero{ padding:76px 0 56px; border-bottom:1px solid var(--rule); }
+.hero-main{ min-width:0; }
+.eyebrow{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1{ font-size:clamp(34px,6vw,52px); margin:0 0 6px; text-wrap:balance; letter-spacing:-0.5px; }
+.h1-sub{ color:var(--sub); font-size:19px; font-style:italic; margin:0 0 22px;}
+.lede{ font-size:17px; max-width:56ch; color:var(--ink); margin:0 0 26px; }
+.hero-links{ display:flex; gap:18px; flex-wrap:wrap; font-family: ui-monospace, monospace; font-size:13px; }
+.hero-links a{ text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:2px; color:var(--ink); }
+.hero-links a:hover{ border-color:var(--accent); color:var(--accent); }
+
+section{ padding:52px 0; border-bottom:1px solid var(--rule); scroll-margin-top:58px; }
+section:last-of-type{ border-bottom:none; }
+h2{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 26px; }
+p{ margin:0 0 14px; max-width:64ch; }
+
+/* about */
+.about-grid{ display:grid; grid-template-columns: 1fr; gap:6px; }
+.vision{ margin-top:24px; padding:18px 20px; border-left:3px solid var(--accent); background:var(--card); box-shadow:var(--shadow); }
+.vision-label,.group-label{ font-family:ui-monospace, monospace; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); }
+.vision p{ margin:5px 0 0; font-size:16px; }
+
+/* research cards */
+.research-group{ margin:30px 0 12px; }
+.research-group:first-of-type{ margin-top:0; }
+.card-list{ display:flex; flex-direction:column; gap:18px; }
+.card{ background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:20px 22px; box-shadow:var(--shadow); }
+.card h3{ margin:0 0 8px; font-size:18px; }
+.card p{ margin:0 0 10px; color:var(--ink); font-size:15px; }
+.tagrow{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.tag{ font-family: ui-monospace, monospace; font-size:10.5px; color:var(--accent); border:1px solid var(--rule); border-radius:3px; padding:2px 8px; }
+.card .links{ margin-top:12px; font-family: ui-monospace, monospace; font-size:12px; }
+.card .links a{ text-decoration:none; color:var(--sub); border-bottom:1px dotted var(--sub); }
+.card .links a:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* timeline */
+.tl{ display:flex; flex-direction:column; gap:0; }
+.tl-item{ display:grid; grid-template-columns:96px 56px minmax(0,1fr); gap:16px; padding:18px 0; border-top:1px solid var(--rule); }
+.tl-item:first-child{ border-top:none; }
+.tl-when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); padding-top:2px; white-space:nowrap; }
+.org-mark{ width:52px; height:42px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:var(--card); overflow:hidden; }
+.org-mark img{ display:block; max-width:44px; max-height:32px; object-fit:contain; }
+.org-mark img.wide{ max-width:48px; max-height:22px; }
+.org-mark.light-logo{ background:#fff; }
+.org-mark img.seal{ max-width:38px; max-height:38px; border-radius:50%; }
+.wq-logo{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#080808; border:3px solid #ff5a1f; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:7px; font-weight:800; line-height:.82; letter-spacing:-.35px; text-transform:uppercase; }
+.tl-role{ font-weight:700; margin-bottom:2px; }
+.tl-org{ color:var(--sub); font-style:italic; font-size:14.5px; margin-bottom:6px; }
+.tl-org a{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--sub); }
+.tl-org a:hover{ color:var(--accent); border-color:var(--accent); }
+.tl-desc{ font-size:14.5px; color:var(--ink); }
+
+/* honors */
+.honors{ display:flex; flex-direction:column; gap:12px; }
+.honor{ display:flex; justify-content:space-between; gap:16px; font-size:15px; border-top:1px solid var(--rule); padding-top:12px; }
+.honor:first-child{ border-top:none; padding-top:0; }
+.honor-main{ display:flex; align-items:flex-start; gap:12px; }
+.honor-mark{ width:38px; height:38px; flex:0 0 38px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:#fff; overflow:hidden; }
+.honor-mark img{ width:32px; height:32px; object-fit:contain; }
+.honor-mark.wordmark{ width:54px; flex-basis:54px; }
+.honor-mark.wordmark img{ width:48px; height:auto; }
+.honor .when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); white-space:nowrap; padding-top:2px;}
+
+/* contact / footer */
+.contact-box{ display:flex; flex-wrap:wrap; gap:14px 26px; font-family: ui-monospace, monospace; font-size:13.5px; }
+.contact-box a{ text-decoration:none; color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:2px;}
+.contact-box a:hover{ color:var(--accent); border-color:var(--accent);}
+footer{ padding:30px 0 60px; }
+footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); font-family: ui-monospace, monospace; font-size:11.5px; }
+
+@media (max-width:600px){
+  .page-shell{ display:block; padding:0 28px; }
+  .profile-sidebar{ position:static; padding:44px 0 28px; display:grid; grid-template-columns:112px minmax(0,1fr); grid-template-rows:auto 1fr; gap:10px 20px; }
+  .profile-name{ grid-column:2; margin:4px 0 0; align-self:end; font-size:29px; }
+  .hero-photo-frame{ grid-column:1; grid-row:1 / span 2; width:112px; }
+  .profile-links{ grid-column:2; grid-row:2; margin-top:4px; flex-direction:row; flex-wrap:wrap; align-content:start; gap:8px 14px; }
+  header.hero{ padding:28px 0 40px; }
+  .hero-main .h1-sub{ font-size:17px; }
+  .tl-item{ grid-template-columns:52px minmax(0,1fr); gap:10px; }
+  .tl-when{ grid-column:1/-1; }
+  nav .brand{ display:none; }
+  nav .links{ width:100%; justify-content:space-between; gap:12px; font-size:11px; }
+  header.hero{ padding:56px 0 40px; }
+}
+.work-list{margin:10px 0 14px;padding-left:18px}.work-list li{margin:0 0 8px}
+
+.article-head h1{font-size:30px;margin:0 0 8px;font-weight:700}
+.article-head .meta{color:var(--sub);font-size:14px;margin:0 0 6px}
+.article-head .note{color:var(--sub);font-size:13.5px;border-left:3px solid var(--accent);padding:6px 12px;background:var(--card);margin:16px 0 0}
+.back{font-family:ui-monospace,monospace;font-size:12.5px;text-decoration:none;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 20px;margin:24px 0;font-size:15px}
+.toc ul{margin:4px 0;padding-left:18px}.toc a{text-decoration:none;color:var(--ink)}.toc a:hover{color:var(--accent)}
+.prose{font-family:"Songti TC","Songti SC","Noto Serif CJK TC","Noto Serif SC",serif;font-size:18px;line-height:2;max-width:38em}
+.prose p{margin:0 0 1.1em;text-indent:2em}
+.prose h1{font-size:24px;margin:2.4em 0 .8em}.prose h2{font-family:inherit;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink);margin:2em 0 .8em}
+.prose h3{font-size:18px;margin:1.6em 0 .6em}
+.prose blockquote{margin:1em 0;padding-left:1em;border-left:2px solid var(--rule);color:var(--sub)}
+.prose hr{border:0;text-align:center;margin:2em 0}.prose.lines p{text-indent:0}
+.prose hr:after{content:"＊　＊　＊";color:var(--sub)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../../#top">Hongjin He</a><div class="links">
+<a href="../../#research">Research</a><a href="../../#experience">Experience</a><a href="../../#writing">Writing</a><a href="../../#honors">Honors</a><a href="../../#contact">Contact</a>
+</div></div></nav>
+<main class="page-shell">
+<aside class="profile-sidebar" aria-label="Profile">
+  <h1 class="profile-name">Hongjin He</h1>
+  <div class="hero-photo-frame">
+    <img class="hero-photo" src="../../assets/hongjin.jpg" alt="Hongjin He" />
+  </div>
+  <div class="profile-links">
+    <a href="../../cv.html">CV ↗</a>
+    <a href="https://github.com/hongjin-he">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/hongjinhe-hkust">LinkedIn ↗</a>
+    <a href="https://scholar.google.com/citations?user=8CrClmkAAAAJ">Google Scholar ↗</a>
+    <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=13762508">SSRN ↗</a>
+    <a href="mailto:hhebh@connect.ust.hk">Email</a>
+  </div>
+</aside>
+<div class="content-column">
+<section><div class="wrap">
+<a class="back" href="../../#writing">← Writing</a>
+<header class="article-head"><h1>當我吃 Omakase 時，我在想些什麼</h1><p class="meta">What I Think About When I Eat Omakase · Essay · September 2026</p></header>
+<article class="prose"><p>——读《厨师发办》有感</p>
+<p>Omakase这个词不知道是什么时候火的。我读高中那会，认知还停留在怀石料理，我一直以为怀石一是日料的最高境界，或许它今天仍是也未可知。</p>
+<p>在过去的数年里，吃过的日料大多难评，仅可作为饱腹之用，低劣到使人难见日本人发明这一项优雅食物的深意。我没有抱怨，因为身为学生的我，作为经济独立体，尚未具有言及寿司必Omakase、怀石之流的底气。我只是默之地把它们用一次性筷子夹起，按直线路径塞进嘴口腔，咀嚼、吞咽，而后周而复始，实在无趣之至。</p>
+<p>吃它们唯二作用，可能是浪费了我一半张纸，外加让我能够在那段精神与物质高度贫瘠的岁月里得到些许最低限度的温饱罢了。</p>
+<p>当然，只是物理上的温饱。</p>
+<p>1 湖南省图书馆的模糊记忆</p>
+<p>距离高考还有百余天的时候，我最大的慰藉就是不去上学，躲在这里读书。彼时阳光正好，整块的玻璃落地窗横陈在喧嚣马路旁，给忙碌、不忙碌，抑或假装忙碌的城市圈出一方安静的天地。我不会用田园牧歌来在精神上形容这种地方。依稀记得，当时总是有两个流浪汉横卧在身旁的可移动长椅上睡觉，大大小小房间随着他们不紧不慢的鼾声规律地起伏着。</p>
+<p>这就是一个高中学生面临高考时读书的environment。</p>
+<p>在这样的环境下，我读了东野圭吾的《湖畔》（记得封面是喑哑的蓝色，记得有极其错综复杂的情感关系，有用石头把尸体沉水之情节，有某位衣冠××初杀人后慌乱）。这大概是东野先生过世之前我读他的最后一本书了，我在此作为万千少男少女或仍以为自己是少男少女之人，为东野先生之逝世表示深深的遗憾与惋惜。之所以这么说，当然另有原因，此处按下不表。我读了一些**君之书的侧面，只觉得此君之作品充满了浓浓的中年男人硬作鸡汤文之感怀之味道，以至于我从未忍心翻开那怕一本书进行扫视，我担心我的视线污染了此先生之崇高。我还饶有幸味地读了一本日本旅游行记，第一次了解到世界上还有一个叫鸭川的很美的地方，字面意义上给人一种一群塑胶玩具鸭子不断地发出”尖叫鸣”那种奇特而幽默的声音而同时从一下悬崖绝壁之上随瀑布坠下之滑稽景象。而那本书想要传达之事实是：鸭川是一条从日本工业污染中刚恢复不久的河流。它不宽，不起伏，只是平祥地穿过阳台架着晾衣线晒衣服的千家万户，缓缓地滋养着京都两岸之水稻，村庄，田野，和城市，流淌着一座城市的血脉。这就是18岁的我在书里读到的宏大世界。</p>
+<p>当然，这些只是我想写《日本料理图鉴》或《日本料理大图鉴》之时顺带闪过之记忆。</p>
+<p>看了豆瓣，大多数人都说《厨师发办》实在是一部烂片，可是我想说的是，如果没有这一部电影，那些高高的关于鸭川之想象，还有年少不恭的扫过摆放**君图书之书架时产生的不敬之心情，可能会慢慢被我在香港科技大学之美好岁月所侵蚀而永久消散吧。</p>
+<p>所以，我想为这部电影正名。</p>
+<p>对了，值得一提的是，当时我已读了东野的《名侦探的咒缚》《祈愿守护人》，这两部书曾给我贫瘠的精神世界带来深深之慰藉。</p>
+<p>我还要感谢我的母亲，和我高三的班主任Una老师，她们甚至让我在距离高考不到一百天的日子里，去IFS国金中心之顶层吃完了一顿人均千元的怀石料理。记得进门有流水，石板，斑驳墙，有月下漫步之感（这是在明亮的大商场里），这似乎就是日本美学里”侘”与”寂”，又让我想起了闹市读书，闹中取静之伟人，那一刻才意识到文化是相通的（日本人文化里看似最不同于中国文化的部分似乎也是从中国文化里借来的）。可惜根据我从湖南图书馆那本图鉴里学来的知识，长沙最正宗之一的怀石料理似乎并不正宗。好像怀石料理应该有艺伎，有歌舞，可惜他们没有，有的只是烤的滋滋作响的牛舌，和从日本进口的可以保存用于过敏人群之柔软纸张。</p>
+<p>我们离开的时候，身着黑色和服之店员拱手鞠躬目送我离开，在市中心五一广场雪白之广告灯光的映衬下，我和姐姐各自拿了一包高档纸巾，默之地塞进裤兜。</p>
+<p>这就是我人生当中第一次至今仍有印象的怀石料理。</p>
+<p>2 试 Omakase｜加利福尼亚，Palo Alto附近某中国主厨之店</p>
+<p>这家店之于我是一个巨大的时光机器。进去时是明晃晃的空闲着街道的热气烘烘的下午，出来已是十点多。Yf提议我们可以去旁边一个很大的Ice‑cream店打卡。我们方行几步，忽见几个”顽劣”青年摇头晃脑，打碎几个啤酒瓶子，不知嘟嘟囔囔说些什么从街角的另一侧走来，只好作罢。</p>
+<p>主厨是中国人，不是华人，不是ABC，说一口纯正之广东话，这让我有一种家之亲切感。不知从什么时候起，我已经把香港当作我的一个家了。</p>
+<p>依次上来之菜品有二十几道，分别用暗青色的，莲花状的，抑或透明的，或如青花裂纹的，或如景德镇某稀有釉色的，或仅仅平常白净如家常的，或如李白幼时所见磨杵老妇所用之青石石板的，或如鳐鱼张开玲珑小口造型的，或如日式房屋之木质颜色的，各色，各式容器呈上。</p>
+<p>实乃视觉之盛宴也。</p>
+<p>至于盘中之物，则有清咸之酱油，腌制之蒜泥块，水冷之生姜，半透明之××鱼，中心环绕住蒜丝，拌在万花丛中一点翠之贝柱，三文鱼之混合寿司，经过48℃温水马杀鸡泰式按摩之章鱼足，鲟鱼籽，乌鱼糟籽，海胆三色齐飞之酿，尤带有橘红色皮的××鱼寿司，某白鱼寿司，某鲜红寿司，某银皮中点缀海莳寿司……</p>
+<p>实是不可胜数。</p>
+<p>最佳者当属师傅当面研磨之山葵，使人食之如初开情窦的怀春少女，暮然回首见到柏原崇般，脸颊泛红，使人顿忘此时身旁正有另一对情侣抑或是夫妻正在大撒狗粮，而沉浸于激刺的当下之中了。</p>
+<p>那实在是一个美好的充斥着愉快的夜晚，以至于我回宿舍之时，同yf大谈特谈自己的青春回忆，而惊醒了在人行隧道里的一个homeless。他带着混着48%，54%之愤怒和1%之醉意从一些破破烂毛毡堆成的小窝里抬起头，那不小心撞跌了旁边原本立着的小小地背警示牌。</p>
+<p>警示牌打在地上，发出剧烈而空洞的响声。</p>
+<p>这就是一个普通19岁少年在美国一个平凡得不能再平凡的晚上。</p>
+<p>3 台南</p>
+<p>2026年8月18日，我在台北度过了难忘了 15 个小时 05 分钟的时光。熟悉军事的朋友应该知道，这几乎等同于***。</p>
+<p>Take it easy，我说这事的目的，只是想说明这是一段漫长的时光，足够我重新认识，透彻解构，又重新构建还原整座城市。</p>
+<p>台北对于痴迷本格派，硬汉派推理小说的我而言，是一个巨大天然密室。整个偌大的台北桃园国际机场由A、B、C、D四区构成，而偏偏像是想给我制造一个复杂的迷宫，好让我没法走出去。这就是真实两岸关系在我一个个人身上最真实之体现。</p>
+<p>机场的美食倒是不错，我从A一路向北，又从D一路向南，如此往复以攻城略地之势先后拿下春水堂 Chun Shui Tang，小南门，興波咖啡 SIMPLE KAFFA，雙月还有一些被遗忘的餐厅，还有一些cocktail and mocktail.</p>
+<p>总之，我就如是以接近五千元新台币的价格征服了小半个桃园机场。</p>
+<p>至于这和Omakase有什么关系？</p>
+<p>我不无jiǎo xiá地告诉你：今天我看的这部电影恰是台南旅游文旅局赞助。只可惜台南到台北之距离太远，未能成行，故只可借台南台北在语义对称性上的关联，来聊表我的遗憾。</p>
+<p>桃园机场，没有我消费得起的Omakase。</p>
+<p>这终于成为我想起Omakase这一词时最大之遗憾。</p>
+</article>
+<p><a class="back" href="../../#writing">← Back to Writing</a></p>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Hongjin He</span><span>Hong Kong SAR</span></div></footer>
+</div></main>
+</body></html>

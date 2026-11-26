@@ -177,6 +177,7 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
   nav .links{ width:100%; justify-content:space-between; gap:12px; font-size:11px; }
   header.hero{ padding:56px 0 40px; }
 }
+.work-list{margin:10px 0 14px;padding-left:18px}.work-list li{margin:0 0 8px}
 </style>
 </head>
 <body>
@@ -187,6 +188,7 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
     <div class="links">
       <a href="#research">Research</a>
       <a href="#experience">Experience</a>
+      <a href="#writing">Writing</a>
       <a href="#honors">Honors</a>
       <a href="#contact">Contact</a>
     </div>
@@ -218,6 +220,9 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
       <p class="lede">My work sits at the intersection of deep reinforcement learning, world models,
         robust decision-making, and quantitative finance. At <strong>HKUST</strong>, I do research with Prof. Nian Si and Prof. Tony Cho, and run an independent project on limit order books. I am also the
         <strong>Co-Founder &amp; CTO of AlphaFlow</strong>, where I lead the technical development of MicroWorld.</p>
+      <p class="lede">In my spare time I am also an amateur writer of essays and short fiction, currently mentored at HKUST by
+        <strong>Prof. Yan Lianke</strong>. My favorite book is Leo Tolstoy's <em>War and Peace</em>; it has deeply shaped
+        how I see the world, and it continues to shape both my research and my writing.</p>
     </div>
   </div>
 </header>
@@ -394,6 +399,52 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
           <div class="tl-org">GBA Redbird Entrepreneurs Alliance</div>
           <div class="tl-desc">Co-built a quantitative strategy platform with Cantonese voice-input support.</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <h2>Writing</h2>
+    <p>Outside research I write literature in Chinese, mostly essays and short fiction. The longer I do both,
+      the more I think writing and quantitative research run on the same underlying logic, though finding a way to
+      explain that to a general reader is still something I'm working on. My current version goes like this:</p>
+    <ul>
+      <li><strong>Both are compression.</strong> A model squeezes a market into a handful of state variables; a story
+        squeezes a life into a handful of scenes. In both, the skill is choosing what to leave out.</li>
+      <li><strong>Both are judged out of sample.</strong> A strategy that only works on the data it was fitted to is
+        worthless; a sentence that only moves its author is too. The real test is a reader, or a market, you have
+        never met.</li>
+      <li><strong>Both reward deletion.</strong> Overfitting and over-writing are the same failure: too many parameters,
+        too many adjectives. Most of my revising, in code or in prose, is removing things.</li>
+      <li><strong>Both start from first principles.</strong> I try to rebuild a model from its assumptions, and a
+        paragraph from what the reader actually needs to see, rather than copying what usually works.</li>
+    </ul>
+    <div class="card-list">
+      <div class="card">
+        <h3>Essays, by my own hand</h3>
+        <p>Personal essays that mix classical Chinese cadence, engineering vocabulary and code-switched English.</p>
+        <ul class="work-list">
+          <li><a href="./writing/omakase/"><em>當我吃 Omakase 時，我在想些什麼</em></a>: What I Think About When I Eat Omakase. A dinner counter, a chef's book, and what it means to be fed.</li>
+          <li><a href="./writing/symmetry-breaking/"><em>從物理學到青春文學</em></a>: From Physics to Coming-of-Age Fiction. Symmetry breaking as a way of reading stories.</li>
+          <li><a href="./writing/innovators-dilemma/"><em>創新者的窘境</em></a>: The Innovator's Dilemma. A cold email to a legendary quant firm, and the one-line reply.</li>
+          <li><a href="./writing/winding-the-bird/"><em>擰發條鳥與星期六的萬聖節們</em></a> (excerpt): Winding the Bird. A Halloween weekend, a historian's advice, and a drunk's random walk home.</li>
+          <li><a href="./writing/monsoon/"><em>季風吹過太平洋的另一個角落</em></a> (excerpt): The Monsoon Across Another Corner of the Pacific. A night drive through Silicon Valley to the other shore of the same ocean.</li>
+        </ul>
+        <div class="tagrow"><span class="tag">essay</span><span class="tag">Chinese</span><span class="tag">Hong Kong</span></div>
+      </div>
+      <div class="card">
+        <h3>An AI writing lab</h3>
+        <p>A working thesis: AI agents should take over the parts of writing that can be replaced, so a person can see
+          what cannot. I run a small "writers' room" of agents, mostly for historical fiction built on archival research,
+          and direct and edit what it produces. Any work I submit discloses AI collaboration and follows each venue's
+          rules; venues that exclude AI receive only work I wrote myself.</p>
+        <ul class="work-list">
+          <li><a href="./writing/jingyun/"><em>京運</em></a>: Copper Bound for the Capital. A historical novel set in 1792, built on the court records of a real copper shipwreck in the Wu Gorge and the year-long salvage that followed.</li>
+          <li><a href="./writing/three-ages/"><em>時代三部曲</em></a>: The Three Ages. Three satirical novellas, <em>Silicon</em>, <em>Carbon</em> and <em>Grey</em>, about writing once machines can write.</li>
+        </ul>
+        <div class="tagrow"><span class="tag">AI-assisted fiction</span><span class="tag">historical research</span><span class="tag">disclosure</span></div>
       </div>
     </div>
   </div>

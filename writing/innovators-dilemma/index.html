@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#10131b"/>
+<title>創新者的窘境 · The Innovator&#x27;s Dilemma – Hongjin He</title>
+<meta name="description" content="創新者的窘境 (The Innovator&#x27;s Dilemma) by Hongjin He (何泓錦)."/>
+<meta name="author" content="Hongjin He"/>
+<link rel="canonical" href="https://hongjin-he.github.io/writing/innovators-dilemma/"/>
+<style>
+:root{
+  color-scheme:dark;
+  --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none;
+}
+:root[data-theme="dark"]{ --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none; }
+:root[data-theme="light"]{ --paper:#f7f5f0; --ink:#16233a; --sub:#5b6472; --accent:#9c7a3c; --rule:#ddd8ca; --card:#ffffff; --shadow: 0 1px 2px rgba(22,35,58,0.06); }
+
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.6;
+}
+.mono{ font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+a{color:var(--ink);}
+::selection{ background:var(--accent); color:var(--paper); }
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+
+/* nav */
+nav{ position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+nav .wrap{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; padding-bottom:14px; }
+nav .brand{ font-weight:700; letter-spacing:0.5px; text-decoration:none; }
+nav .links{ display:flex; gap:20px; font-family: ui-monospace, monospace; font-size:12.5px; letter-spacing:0.5px; }
+nav .links a{ text-decoration:none; color:var(--sub); }
+nav .links a:hover{ color:var(--accent); }
+
+/* fixed profile + scrolling content */
+.page-shell{ max-width:1040px; margin:0 auto; padding:0 28px; display:grid; grid-template-columns:210px minmax(0,1fr); gap:64px; align-items:start; }
+.profile-sidebar{ position:sticky; top:92px; align-self:start; padding:64px 0 48px; }
+.profile-name{ font-size:28px; margin:0 0 20px; letter-spacing:-0.3px; }
+.hero-photo-frame{ width:210px; aspect-ratio:3/4; border-radius:8px; overflow:hidden; border:1px solid var(--rule); box-shadow:var(--shadow); }
+.hero-photo{ width:100%; height:100%; object-fit:cover; object-position:center 34%; transform:translateX(7px) scale(1.5); transform-origin:center 34%; display:block; }
+.profile-links{ display:flex; flex-direction:column; align-items:flex-start; gap:7px; margin-top:22px; font-family:ui-monospace, monospace; font-size:12.5px; }
+.profile-links a{ color:var(--sub); text-decoration:none; border-bottom:1px solid var(--rule); }
+.profile-links a:hover{ color:var(--accent); border-color:var(--accent); }
+.content-column{ min-width:0; }
+.content-column .wrap{ max-width:none; padding-left:0; padding-right:0; }
+
+/* hero */
+header.hero{ padding:76px 0 56px; border-bottom:1px solid var(--rule); }
+.hero-main{ min-width:0; }
+.eyebrow{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1{ font-size:clamp(34px,6vw,52px); margin:0 0 6px; text-wrap:balance; letter-spacing:-0.5px; }
+.h1-sub{ color:var(--sub); font-size:19px; font-style:italic; margin:0 0 22px;}
+.lede{ font-size:17px; max-width:56ch; color:var(--ink); margin:0 0 26px; }
+.hero-links{ display:flex; gap:18px; flex-wrap:wrap; font-family: ui-monospace, monospace; font-size:13px; }
+.hero-links a{ text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:2px; color:var(--ink); }
+.hero-links a:hover{ border-color:var(--accent); color:var(--accent); }
+
+section{ padding:52px 0; border-bottom:1px solid var(--rule); scroll-margin-top:58px; }
+section:last-of-type{ border-bottom:none; }
+h2{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 26px; }
+p{ margin:0 0 14px; max-width:64ch; }
+
+/* about */
+.about-grid{ display:grid; grid-template-columns: 1fr; gap:6px; }
+.vision{ margin-top:24px; padding:18px 20px; border-left:3px solid var(--accent); background:var(--card); box-shadow:var(--shadow); }
+.vision-label,.group-label{ font-family:ui-monospace, monospace; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); }
+.vision p{ margin:5px 0 0; font-size:16px; }
+
+/* research cards */
+.research-group{ margin:30px 0 12px; }
+.research-group:first-of-type{ margin-top:0; }
+.card-list{ display:flex; flex-direction:column; gap:18px; }
+.card{ background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:20px 22px; box-shadow:var(--shadow); }
+.card h3{ margin:0 0 8px; font-size:18px; }
+.card p{ margin:0 0 10px; color:var(--ink); font-size:15px; }
+.tagrow{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.tag{ font-family: ui-monospace, monospace; font-size:10.5px; color:var(--accent); border:1px solid var(--rule); border-radius:3px; padding:2px 8px; }
+.card .links{ margin-top:12px; font-family: ui-monospace, monospace; font-size:12px; }
+.card .links a{ text-decoration:none; color:var(--sub); border-bottom:1px dotted var(--sub); }
+.card .links a:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* timeline */
+.tl{ display:flex; flex-direction:column; gap:0; }
+.tl-item{ display:grid; grid-template-columns:96px 56px minmax(0,1fr); gap:16px; padding:18px 0; border-top:1px solid var(--rule); }
+.tl-item:first-child{ border-top:none; }
+.tl-when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); padding-top:2px; white-space:nowrap; }
+.org-mark{ width:52px; height:42px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:var(--card); overflow:hidden; }
+.org-mark img{ display:block; max-width:44px; max-height:32px; object-fit:contain; }
+.org-mark img.wide{ max-width:48px; max-height:22px; }
+.org-mark.light-logo{ background:#fff; }
+.org-mark img.seal{ max-width:38px; max-height:38px; border-radius:50%; }
+.wq-logo{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#080808; border:3px solid #ff5a1f; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:7px; font-weight:800; line-height:.82; letter-spacing:-.35px; text-transform:uppercase; }
+.tl-role{ font-weight:700; margin-bottom:2px; }
+.tl-org{ color:var(--sub); font-style:italic; font-size:14.5px; margin-bottom:6px; }
+.tl-org a{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--sub); }
+.tl-org a:hover{ color:var(--accent); border-color:var(--accent); }
+.tl-desc{ font-size:14.5px; color:var(--ink); }
+
+/* honors */
+.honors{ display:flex; flex-direction:column; gap:12px; }
+.honor{ display:flex; justify-content:space-between; gap:16px; font-size:15px; border-top:1px solid var(--rule); padding-top:12px; }
+.honor:first-child{ border-top:none; padding-top:0; }
+.honor-main{ display:flex; align-items:flex-start; gap:12px; }
+.honor-mark{ width:38px; height:38px; flex:0 0 38px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:#fff; overflow:hidden; }
+.honor-mark img{ width:32px; height:32px; object-fit:contain; }
+.honor-mark.wordmark{ width:54px; flex-basis:54px; }
+.honor-mark.wordmark img{ width:48px; height:auto; }
+.honor .when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); white-space:nowrap; padding-top:2px;}
+
+/* contact / footer */
+.contact-box{ display:flex; flex-wrap:wrap; gap:14px 26px; font-family: ui-monospace, monospace; font-size:13.5px; }
+.contact-box a{ text-decoration:none; color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:2px;}
+.contact-box a:hover{ color:var(--accent); border-color:var(--accent);}
+footer{ padding:30px 0 60px; }
+footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); font-family: ui-monospace, monospace; font-size:11.5px; }
+
+@media (max-width:600px){
+  .page-shell{ display:block; padding:0 28px; }
+  .profile-sidebar{ position:static; padding:44px 0 28px; display:grid; grid-template-columns:112px minmax(0,1fr); grid-template-rows:auto 1fr; gap:10px 20px; }
+  .profile-name{ grid-column:2; margin:4px 0 0; align-self:end; font-size:29px; }
+  .hero-photo-frame{ grid-column:1; grid-row:1 / span 2; width:112px; }
+  .profile-links{ grid-column:2; grid-row:2; margin-top:4px; flex-direction:row; flex-wrap:wrap; align-content:start; gap:8px 14px; }
+  header.hero{ padding:28px 0 40px; }
+  .hero-main .h1-sub{ font-size:17px; }
+  .tl-item{ grid-template-columns:52px minmax(0,1fr); gap:10px; }
+  .tl-when{ grid-column:1/-1; }
+  nav .brand{ display:none; }
+  nav .links{ width:100%; justify-content:space-between; gap:12px; font-size:11px; }
+  header.hero{ padding:56px 0 40px; }
+}
+.work-list{margin:10px 0 14px;padding-left:18px}.work-list li{margin:0 0 8px}
+
+.article-head h1{font-size:30px;margin:0 0 8px;font-weight:700}
+.article-head .meta{color:var(--sub);font-size:14px;margin:0 0 6px}
+.article-head .note{color:var(--sub);font-size:13.5px;border-left:3px solid var(--accent);padding:6px 12px;background:var(--card);margin:16px 0 0}
+.back{font-family:ui-monospace,monospace;font-size:12.5px;text-decoration:none;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 20px;margin:24px 0;font-size:15px}
+.toc ul{margin:4px 0;padding-left:18px}.toc a{text-decoration:none;color:var(--ink)}.toc a:hover{color:var(--accent)}
+.prose{font-family:"Songti TC","Songti SC","Noto Serif CJK TC","Noto Serif SC",serif;font-size:18px;line-height:2;max-width:38em}
+.prose p{margin:0 0 1.1em;text-indent:2em}
+.prose h1{font-size:24px;margin:2.4em 0 .8em}.prose h2{font-family:inherit;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink);margin:2em 0 .8em}
+.prose h3{font-size:18px;margin:1.6em 0 .6em}
+.prose blockquote{margin:1em 0;padding-left:1em;border-left:2px solid var(--rule);color:var(--sub)}
+.prose hr{border:0;text-align:center;margin:2em 0}.prose.lines p{text-indent:0}
+.prose hr:after{content:"＊　＊　＊";color:var(--sub)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../../#top">Hongjin He</a><div class="links">
+<a href="../../#research">Research</a><a href="../../#experience">Experience</a><a href="../../#writing">Writing</a><a href="../../#honors">Honors</a><a href="../../#contact">Contact</a>
+</div></div></nav>
+<main class="page-shell">
+<aside class="profile-sidebar" aria-label="Profile">
+  <h1 class="profile-name">Hongjin He</h1>
+  <div class="hero-photo-frame">
+    <img class="hero-photo" src="../../assets/hongjin.jpg" alt="Hongjin He" />
+  </div>
+  <div class="profile-links">
+    <a href="../../cv.html">CV ↗</a>
+    <a href="https://github.com/hongjin-he">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/hongjinhe-hkust">LinkedIn ↗</a>
+    <a href="https://scholar.google.com/citations?user=8CrClmkAAAAJ">Google Scholar ↗</a>
+    <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=13762508">SSRN ↗</a>
+    <a href="mailto:hhebh@connect.ust.hk">Email</a>
+  </div>
+</aside>
+<div class="content-column">
+<section><div class="wrap">
+<a class="back" href="../../#writing">← Writing</a>
+<header class="article-head"><h1>創新者的窘境</h1><p class="meta">The Innovator&#x27;s Dilemma · Essay · September 2026</p></header>
+<article class="prose lines"><p>《创新者的窘境 / 解答》系列是我一生当中读过为数不多可以用一个词来概括全书的作品。</p>
+<p>即破坏性创新，又译作颠覆性创新，英文作“Disruptive Innovation”</p>
+<p>按理说，自2020年，克莱顿·克里斯滕森教授过世后，随着人们越来越少地谈起这位昔日白宫学者的光辉往事，再加上流媒体时代和AI浪潮之兴起，我本不应再和他和他的这部作品又有什么交集。</p>
+<p>直到…</p>
+<p>前几天，经×××介绍，我跟Hank.H，Kronos Research 的CEO&amp;CTO发送了合作意向的email</p>
+<p>需知KR乃是全球顶尖之加密量化巨头，亦是台北为数不多的顶尖量化巨头之一<br />
+此头衔由其鼎盛时期的业绩可见一斑：<br />
+2021年日均交易额高达50亿美元<br />
+单日最高交易额突破230亿美元，与Amber Group等共同稳居全球前五大加密量化团队。<br />
+其盛况，真可谓当世量化界之乱世枭雄如吕布，曹操者也</p>
+<p>…</p>
+<p>他们其实一直很低调，不喜欢像其他crypto公司那样疯狂地到twitter上发文，造势，低位建仓，高位抛售，所以不那么为人所知。</p>
+<p>他们其实从未忘记初心，在其他竞争者都在喧嚣聒噪，操纵市场情绪的时候，他们只是暗地里给量化和crypto的基础建设添砖加瓦。</p>
+<p>…</p>
+<p>今天早上，收到了Hank.H的邮件。</p>
+<p>那明晃晃的拉丁字母，柔和而又沉重地躺在我的屏幕上。</p>
+<p>「Kronos is no longer in business」</p>
+<p>没有惊喜</p>
+<p>亦没有被拒的失落</p>
+<p>我只是久久地愣在桌前<br />
+仿佛心里有什么地方少了一块</p>
+<p>「这恐怕就是创新者的窘境吧，」<br />
+我对自己说。</p>
+<p>9.14夜凌晨<br />
+有感，遂为记。</p>
+</article>
+<p><a class="back" href="../../#writing">← Back to Writing</a></p>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Hongjin He</span><span>Hong Kong SAR</span></div></footer>
+</div></main>
+</body></html>

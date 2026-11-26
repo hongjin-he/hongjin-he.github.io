@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#10131b"/>
+<title>從物理學到青春文學 · From Physics to Coming-of-Age Fiction – Hongjin He</title>
+<meta name="description" content="從物理學到青春文學 (From Physics to Coming-of-Age Fiction) by Hongjin He (何泓錦)."/>
+<meta name="author" content="Hongjin He"/>
+<link rel="canonical" href="https://hongjin-he.github.io/writing/symmetry-breaking/"/>
+<style>
+:root{
+  color-scheme:dark;
+  --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none;
+}
+:root[data-theme="dark"]{ --paper:#10131b; --ink:#eae6db; --sub:#9aa0ac; --accent:#c9a35f; --rule:#262b38; --card:#161a24; --shadow:none; }
+:root[data-theme="light"]{ --paper:#f7f5f0; --ink:#16233a; --sub:#5b6472; --accent:#9c7a3c; --rule:#ddd8ca; --card:#ffffff; --shadow: 0 1px 2px rgba(22,35,58,0.06); }
+
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--paper);color:var(--ink);}
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  line-height:1.6;
+}
+.mono{ font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+a{color:var(--ink);}
+::selection{ background:var(--accent); color:var(--paper); }
+
+.wrap{ max-width:1040px; margin:0 auto; padding:0 28px; }
+
+/* nav */
+nav{ position:sticky; top:0; z-index:10; background:color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter:blur(6px); border-bottom:1px solid var(--rule); }
+nav .wrap{ display:flex; justify-content:space-between; align-items:center; padding-top:14px; padding-bottom:14px; }
+nav .brand{ font-weight:700; letter-spacing:0.5px; text-decoration:none; }
+nav .links{ display:flex; gap:20px; font-family: ui-monospace, monospace; font-size:12.5px; letter-spacing:0.5px; }
+nav .links a{ text-decoration:none; color:var(--sub); }
+nav .links a:hover{ color:var(--accent); }
+
+/* fixed profile + scrolling content */
+.page-shell{ max-width:1040px; margin:0 auto; padding:0 28px; display:grid; grid-template-columns:210px minmax(0,1fr); gap:64px; align-items:start; }
+.profile-sidebar{ position:sticky; top:92px; align-self:start; padding:64px 0 48px; }
+.profile-name{ font-size:28px; margin:0 0 20px; letter-spacing:-0.3px; }
+.hero-photo-frame{ width:210px; aspect-ratio:3/4; border-radius:8px; overflow:hidden; border:1px solid var(--rule); box-shadow:var(--shadow); }
+.hero-photo{ width:100%; height:100%; object-fit:cover; object-position:center 34%; transform:translateX(7px) scale(1.5); transform-origin:center 34%; display:block; }
+.profile-links{ display:flex; flex-direction:column; align-items:flex-start; gap:7px; margin-top:22px; font-family:ui-monospace, monospace; font-size:12.5px; }
+.profile-links a{ color:var(--sub); text-decoration:none; border-bottom:1px solid var(--rule); }
+.profile-links a:hover{ color:var(--accent); border-color:var(--accent); }
+.content-column{ min-width:0; }
+.content-column .wrap{ max-width:none; padding-left:0; padding-right:0; }
+
+/* hero */
+header.hero{ padding:76px 0 56px; border-bottom:1px solid var(--rule); }
+.hero-main{ min-width:0; }
+.eyebrow{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 14px; }
+h1{ font-size:clamp(34px,6vw,52px); margin:0 0 6px; text-wrap:balance; letter-spacing:-0.5px; }
+.h1-sub{ color:var(--sub); font-size:19px; font-style:italic; margin:0 0 22px;}
+.lede{ font-size:17px; max-width:56ch; color:var(--ink); margin:0 0 26px; }
+.hero-links{ display:flex; gap:18px; flex-wrap:wrap; font-family: ui-monospace, monospace; font-size:13px; }
+.hero-links a{ text-decoration:none; border-bottom:1px solid var(--rule); padding-bottom:2px; color:var(--ink); }
+.hero-links a:hover{ border-color:var(--accent); color:var(--accent); }
+
+section{ padding:52px 0; border-bottom:1px solid var(--rule); scroll-margin-top:58px; }
+section:last-of-type{ border-bottom:none; }
+h2{ font-family: ui-monospace, monospace; font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:var(--accent); margin:0 0 26px; }
+p{ margin:0 0 14px; max-width:64ch; }
+
+/* about */
+.about-grid{ display:grid; grid-template-columns: 1fr; gap:6px; }
+.vision{ margin-top:24px; padding:18px 20px; border-left:3px solid var(--accent); background:var(--card); box-shadow:var(--shadow); }
+.vision-label,.group-label{ font-family:ui-monospace, monospace; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--accent); }
+.vision p{ margin:5px 0 0; font-size:16px; }
+
+/* research cards */
+.research-group{ margin:30px 0 12px; }
+.research-group:first-of-type{ margin-top:0; }
+.card-list{ display:flex; flex-direction:column; gap:18px; }
+.card{ background:var(--card); border:1px solid var(--rule); border-radius:8px; padding:20px 22px; box-shadow:var(--shadow); }
+.card h3{ margin:0 0 8px; font-size:18px; }
+.card p{ margin:0 0 10px; color:var(--ink); font-size:15px; }
+.tagrow{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.tag{ font-family: ui-monospace, monospace; font-size:10.5px; color:var(--accent); border:1px solid var(--rule); border-radius:3px; padding:2px 8px; }
+.card .links{ margin-top:12px; font-family: ui-monospace, monospace; font-size:12px; }
+.card .links a{ text-decoration:none; color:var(--sub); border-bottom:1px dotted var(--sub); }
+.card .links a:hover{ color:var(--accent); border-color:var(--accent); }
+
+/* timeline */
+.tl{ display:flex; flex-direction:column; gap:0; }
+.tl-item{ display:grid; grid-template-columns:96px 56px minmax(0,1fr); gap:16px; padding:18px 0; border-top:1px solid var(--rule); }
+.tl-item:first-child{ border-top:none; }
+.tl-when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); padding-top:2px; white-space:nowrap; }
+.org-mark{ width:52px; height:42px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:var(--card); overflow:hidden; }
+.org-mark img{ display:block; max-width:44px; max-height:32px; object-fit:contain; }
+.org-mark img.wide{ max-width:48px; max-height:22px; }
+.org-mark.light-logo{ background:#fff; }
+.org-mark img.seal{ max-width:38px; max-height:38px; border-radius:50%; }
+.wq-logo{ width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#080808; border:3px solid #ff5a1f; color:#fff; font-family:Arial, Helvetica, sans-serif; font-size:7px; font-weight:800; line-height:.82; letter-spacing:-.35px; text-transform:uppercase; }
+.tl-role{ font-weight:700; margin-bottom:2px; }
+.tl-org{ color:var(--sub); font-style:italic; font-size:14.5px; margin-bottom:6px; }
+.tl-org a{ color:inherit; text-decoration:none; border-bottom:1px dotted var(--sub); }
+.tl-org a:hover{ color:var(--accent); border-color:var(--accent); }
+.tl-desc{ font-size:14.5px; color:var(--ink); }
+
+/* honors */
+.honors{ display:flex; flex-direction:column; gap:12px; }
+.honor{ display:flex; justify-content:space-between; gap:16px; font-size:15px; border-top:1px solid var(--rule); padding-top:12px; }
+.honor:first-child{ border-top:none; padding-top:0; }
+.honor-main{ display:flex; align-items:flex-start; gap:12px; }
+.honor-mark{ width:38px; height:38px; flex:0 0 38px; display:flex; align-items:center; justify-content:center; border:1px solid var(--rule); border-radius:7px; background:#fff; overflow:hidden; }
+.honor-mark img{ width:32px; height:32px; object-fit:contain; }
+.honor-mark.wordmark{ width:54px; flex-basis:54px; }
+.honor-mark.wordmark img{ width:48px; height:auto; }
+.honor .when{ font-family: ui-monospace, monospace; font-size:12px; color:var(--sub); white-space:nowrap; padding-top:2px;}
+
+/* contact / footer */
+.contact-box{ display:flex; flex-wrap:wrap; gap:14px 26px; font-family: ui-monospace, monospace; font-size:13.5px; }
+.contact-box a{ text-decoration:none; color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:2px;}
+.contact-box a:hover{ color:var(--accent); border-color:var(--accent);}
+footer{ padding:30px 0 60px; }
+footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); font-family: ui-monospace, monospace; font-size:11.5px; }
+
+@media (max-width:600px){
+  .page-shell{ display:block; padding:0 28px; }
+  .profile-sidebar{ position:static; padding:44px 0 28px; display:grid; grid-template-columns:112px minmax(0,1fr); grid-template-rows:auto 1fr; gap:10px 20px; }
+  .profile-name{ grid-column:2; margin:4px 0 0; align-self:end; font-size:29px; }
+  .hero-photo-frame{ grid-column:1; grid-row:1 / span 2; width:112px; }
+  .profile-links{ grid-column:2; grid-row:2; margin-top:4px; flex-direction:row; flex-wrap:wrap; align-content:start; gap:8px 14px; }
+  header.hero{ padding:28px 0 40px; }
+  .hero-main .h1-sub{ font-size:17px; }
+  .tl-item{ grid-template-columns:52px minmax(0,1fr); gap:10px; }
+  .tl-when{ grid-column:1/-1; }
+  nav .brand{ display:none; }
+  nav .links{ width:100%; justify-content:space-between; gap:12px; font-size:11px; }
+  header.hero{ padding:56px 0 40px; }
+}
+.work-list{margin:10px 0 14px;padding-left:18px}.work-list li{margin:0 0 8px}
+
+.article-head h1{font-size:30px;margin:0 0 8px;font-weight:700}
+.article-head .meta{color:var(--sub);font-size:14px;margin:0 0 6px}
+.article-head .note{color:var(--sub);font-size:13.5px;border-left:3px solid var(--accent);padding:6px 12px;background:var(--card);margin:16px 0 0}
+.back{font-family:ui-monospace,monospace;font-size:12.5px;text-decoration:none;color:var(--accent)}
+.toc{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 20px;margin:24px 0;font-size:15px}
+.toc ul{margin:4px 0;padding-left:18px}.toc a{text-decoration:none;color:var(--ink)}.toc a:hover{color:var(--accent)}
+.prose{font-family:"Songti TC","Songti SC","Noto Serif CJK TC","Noto Serif SC",serif;font-size:18px;line-height:2;max-width:38em}
+.prose p{margin:0 0 1.1em;text-indent:2em}
+.prose h1{font-size:24px;margin:2.4em 0 .8em}.prose h2{font-family:inherit;font-size:20px;letter-spacing:0;text-transform:none;color:var(--ink);margin:2em 0 .8em}
+.prose h3{font-size:18px;margin:1.6em 0 .6em}
+.prose blockquote{margin:1em 0;padding-left:1em;border-left:2px solid var(--rule);color:var(--sub)}
+.prose hr{border:0;text-align:center;margin:2em 0}.prose.lines p{text-indent:0}
+.prose hr:after{content:"＊　＊　＊";color:var(--sub)}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="brand" href="../../#top">Hongjin He</a><div class="links">
+<a href="../../#research">Research</a><a href="../../#experience">Experience</a><a href="../../#writing">Writing</a><a href="../../#honors">Honors</a><a href="../../#contact">Contact</a>
+</div></div></nav>
+<main class="page-shell">
+<aside class="profile-sidebar" aria-label="Profile">
+  <h1 class="profile-name">Hongjin He</h1>
+  <div class="hero-photo-frame">
+    <img class="hero-photo" src="../../assets/hongjin.jpg" alt="Hongjin He" />
+  </div>
+  <div class="profile-links">
+    <a href="../../cv.html">CV ↗</a>
+    <a href="https://github.com/hongjin-he">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/hongjinhe-hkust">LinkedIn ↗</a>
+    <a href="https://scholar.google.com/citations?user=8CrClmkAAAAJ">Google Scholar ↗</a>
+    <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=13762508">SSRN ↗</a>
+    <a href="mailto:hhebh@connect.ust.hk">Email</a>
+  </div>
+</aside>
+<div class="content-column">
+<section><div class="wrap">
+<a class="back" href="../../#writing">← Writing</a>
+<header class="article-head"><h1>從物理學到青春文學</h1><p class="meta">From Physics to Coming-of-Age Fiction · Essay · September 2026</p></header>
+<article class="prose"><p>从物理学到青春文学</p>
+<p>——谈对称性破缺的泛化性</p>
+<p>欧洲西南角，东临地中海，西接大西洋，北面比斯开湾有一个叫”伊比利亚半岛”的地方</p>
+<p>你可能从来没有听过这个地方，但这片神秘的土地却以他独特而淳朴的方式，孕育出了Sombrero，从而改变和影响了一代代物理学家对事物世界之理解和认知。</p>
+<p>Sombrero，墨西哥宽边帽，因传播至Mexico而闻名。据说佩戴者戴上这种帽子后，阳光便不会直接照射到脸部和眼睛。</p>
+<p>这种帽子的帽顶又高又尖，而且帽檐特别宽如果你跟我一样看过2017年美国Pixel动画工作室发行的《寻梦环游记》，那么你一定会对这种神奇的帽子有印象。</p>
+<p>如果你没看过，Congrats！你正在进入一个新的领域，这意味着你在学习新知。</p>
+<p>通常墨西哥帽问题被视为 spontaneous symmetry breaking 自发对称破缺最经典的一个例子。</p>
+<p>设想在墨西哥帽的帽顶有一个圆球，其处于旋转对称的状态，对于绕着帽子中心轴的旋转，圆球的位置不变。由于圆球此时处于局部最大势能之状态，极不稳定，一旦稍加摄动，就可以促使圆球滚落至帽子谷底的任意位置，使得旋转对称性被打破。</p>
+<p>笔者不妨以希格斯机制作为一个简单之应用Case来进行分析：</p>
+<p>φ(xᵅ)=φ₁(xᵅ)+iφ₂(xᵅ)</p>
+<p>xᵅ=(ct,x₁,x₂,x₃) 四维矢量</p>
+<p>假定 Higgs Field 之形式为：</p>
+<p>V(φ<em>φ)=μ²φ</em>φ+λ(φ*φ)² ; μ,λ&gt;0 Constant</p>
+<p>则此物理系统只有一个最低能量形态，其希格斯场为零 (φᵥₐc=0)</p>
+<p>对于此自旋为0，质量为0，势能为V(φ*φ)的标量场φ</p>
+<p>ℒ=(∂ᵤφ)<em>(∂ᵘφ)−μ²φ</em>φ−λ(φ*φ)²</p>
+<p>全域相位变换：φ → φ’=eⁱ⁰φ ，ℒ不变</p>
+<p>φᵥₐc → φ’ᵥₐc=eⁱ⁰φᵥₐc=0</p>
+<p>∴此物理系统对于全域相位变换具有外显的对称性</p>
+<p>以上是希格斯机制外显对称性案例之一个分析需要指出的是在标准模型里，希格斯机制是一种生成质量的机制，能够使基本粒子获得质量</p>
+<p>你可能会好奇，为什么费米子、W玻色子、Z玻色子具有质量，而光子、胶子的质量为0？</p>
+<p>这些机制都可以用希格斯机制来解释。而需要指出之的是，希格斯势的形状近似于一顶墨西哥帽。</p>
+<p>所以说，这一顶看似平淡无奇的帽子，赋予了质量以含义，从而深切地改变了整个物理学世界的格局。</p>
+<p>物理学家似乎总是更偏爱旋转对称性，在讨论双侧对称性时，总是很少提到”对称性破缺”这个词。</p>
+<p>当然，如果有的话，他极有可能会因为我接下来的话而被人挂上文学家，或者青春文学家之title。</p>
+<p>我不知道这是不是一件好事。至少，如果我是那位物理学家的话，我一定会感到窃喜吧。</p>
+<p>这件事好比一个偌大之白雪世界被一堵同样无瑕之白色高墙所隔开，我们现在在墙之顶上放一桶漆黑的墨水。</p>
+<p>现在一片岁月静好，至少两侧之人都看不到那桶墨水，他们只能看见大雪飞花。</p>
+<p>真可惜</p>
+<p>此时人群中有人感叹了一句： “忽如一夜春风来，千树万树梨花开”</p>
+<p>然后那阵风吹跌了墨水桶，敲晕了诗人，使之成为了茫茫大地上唯一不洁之污点、</p>
+<p>这个并不浪漫的事情，就是双侧对称性破缺。</p>
+<p>但是，单就青春文学这个我尤为感兴趣之分支而言，双侧对称性破缺似乎是许多作家所擅长使用之一技法。</p>
+<p>譬如，饶雪漫笔下之陈都灵饰演之左耳右耳听力不对称之少女，毕竟双耳失聪似乎不合普罗大众之喜好，而单耳失聪，却能够让她听得到的另一半衬托得更有魅力，而听不见的一半，则可以用来盛放那些不吐不快，但又不能真让她听到的情话和秘密。</p>
+<p>譬如，村上春树作品《且听风吟》中少了一只小指的女孩，身体之缺陷反而给夜夜在酒吧徘徊之我，留下了记忆点，更多了一点青春期创伤之象征隐喻，以及一种无法弥补之破碎感。</p>
+<p>《海边卡夫卡》大岛之身份认同，则把这种二元破缺感上升到了性别二元关系之难舍难分，身体呈女性，但自我认同为男性，代表了一种身体与灵魂之错位和不确定性。</p>
+<p>……</p>
+<p>例子太多了，不可一一胜数。当然其他文学类型里面当然也可以找到二元对称破缺之影子。</p>
+<p>但是对于十九岁之我而言，青春文学之不完美对于我年少的心灵有极大的冲击和吸引力。</p>
+<p>“不存在十全十美之文章，如同不存在彻头彻尾之绝望。”</p>
+<p>或许不完美本身，就是生命最动人之地方。</p>
+<p>物理学如是，青春亦如是。</p>
+</article>
+<p><a class="back" href="../../#writing">← Back to Writing</a></p>
+</div></section>
+<footer><div class="wrap"><span>© 2026 Hongjin He</span><span>Hong Kong SAR</span></div></footer>
+</div></main>
+</body></html>
