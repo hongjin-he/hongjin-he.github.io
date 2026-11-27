@@ -172,7 +172,7 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
 <div class="content-column">
 <section><div class="wrap">
 <a class="back" href="../../#writing">← Writing</a>
-<header class="article-head"><h1>京運</h1><p class="meta">Copper Bound for the Capital · Historical novel · 2026</p><p class="note">Written in the AI writing lab: research, drafting and revision done with AI agents under my direction and editing. Set in 1792 and built on archival research into a real copper shipwreck in the Wu Gorge.</p></header>
+<header class="article-head"><h1>京運</h1><p class="meta">Copper Bound for the Capital · Historical novel · 2026</p><button id="zh-toggle" class="zh-toggle" type="button" aria-label="切換簡體 / 繁體">简体</button><p class="note">Written in the AI writing lab: research, drafting and revision done with AI agents under my direction and editing. Set in 1792 and built on archival research into a real copper shipwreck in the Wu Gorge.</p></header>
 <article class="prose"><div class="toc" role="navigation" aria-label="Contents"><strong>目錄</strong><ul><li style="margin-left:0px;list-style:none"><a href="#s1">楔子　五十斤</a></li><li style="margin-left:0px;list-style:none"><a href="#s2">第一部　上水</a></li><li style="margin-left:16px;list-style:none"><a href="#s3">第一章　法馬</a></li><li style="margin-left:16px;list-style:none"><a href="#s4">第二章　守風</a></li><li style="margin-left:16px;list-style:none"><a href="#s5">第三章　峽口</a></li><li style="margin-left:16px;list-style:none"><a href="#s6">第四章　大磨灘</a></li><li style="margin-left:0px;list-style:none"><a href="#s7">第二部　守灘</a></li><li style="margin-left:16px;list-style:none"><a href="#s8">第五章　十日</a></li><li style="margin-left:16px;list-style:none"><a href="#s9">第六章　水摸</a></li><li style="margin-left:16px;list-style:none"><a href="#s10">第七章　大水</a></li><li style="margin-left:16px;list-style:none"><a href="#s11">第八章　水落</a></li><li style="margin-left:16px;list-style:none"><a href="#s12">第九章　測深</a></li><li style="margin-left:16px;list-style:none"><a href="#s13">第十章　則例</a></li><li style="margin-left:16px;list-style:none"><a href="#s14">第十一章　上諭</a></li><li style="margin-left:16px;list-style:none"><a href="#s15">第十二章　此非弊而何</a></li><li style="margin-left:16px;list-style:none"><a href="#s16">第十三章　一塊銅</a></li><li style="margin-left:0px;list-style:none"><a href="#s17">第三部　結案</a></li><li style="margin-left:16px;list-style:none"><a href="#s18">第十四章　稟</a></li><li style="margin-left:16px;list-style:none"><a href="#s19">第十五章　斷無逼令</a></li><li style="margin-left:16px;list-style:none"><a href="#s20">第十六章　下水</a></li><li style="margin-left:16px;list-style:none"><a href="#s21">尾聲　沱</a></li></ul></div><h1 id="s1">楔子　五十斤</h1>
 <p>一塊銅要被秤多少次，才能走到北京？</p>
 <p>這個問題沒有人問過。戶部不問，戶部只問到了多少；雲南布政使司不問，布政司只問發了多少；湯丹廠的廠官也不問，他只問今年的額辦夠不夠數。可是如果有人肯跟著一塊銅走一趟，從頭數到尾，他會發現這個數字大得嚇人，而且每多秤一次，就多一個人要對這塊銅負責。</p>
@@ -3925,4 +3925,35 @@ footer .wrap{ display:flex; justify-content:space-between; color:var(--sub); fon
 </div></section>
 <footer><div class="wrap"><span>© 2026 Hongjin He</span><span>Hong Kong SAR</span></div></footer>
 </div></main>
+<style>
+.zh-toggle{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:1.5px;color:var(--accent);background:var(--card);border:1px solid var(--accent);border-radius:4px;padding:5px 12px;margin:8px 0 0;cursor:pointer}
+.zh-toggle:hover{background:var(--accent);color:var(--paper)}
+.zh-toggle[disabled]{opacity:.5;cursor:wait}
+</style><script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/t2cn.js"></script>
+<script>
+(function(){
+  var btn=document.getElementById('zh-toggle'); if(!btn) return;
+  var roots=[document.querySelector('.article-head h1'),document.querySelector('article.prose')];
+  var nodes=null, orig=null, simp=null, mode='t';
+  function collect(){
+    nodes=[];orig=[];
+    roots.forEach(function(r){ if(!r) return;
+      var w=document.createTreeWalker(r,NodeFilter.SHOW_TEXT,null);
+      var n; while((n=w.nextNode())){ if(n.nodeValue.trim()){ nodes.push(n); orig.push(n.nodeValue);} }
+    });
+  }
+  function apply(m){
+    if(typeof OpenCC==='undefined'){ btn.textContent='暫不可用'; btn.disabled=true; return; }
+    if(!nodes) collect();
+    if(m==='s'&&!simp){ var c=OpenCC.Converter({from:'tw',to:'cn'}); simp=orig.map(c); }
+    var src=m==='s'?simp:orig;
+    for(var i=0;i<nodes.length;i++) nodes[i].nodeValue=src[i];
+    mode=m; btn.textContent=m==='s'?'繁體':'简体';
+    document.documentElement.lang=m==='s'?'zh-Hans':'zh-Hant';
+    try{ localStorage.setItem('zh-mode',m); }catch(e){}
+  }
+  btn.addEventListener('click',function(){ apply(mode==='s'?'t':'s'); });
+  try{ if(localStorage.getItem('zh-mode')==='s') apply('s'); }catch(e){}
+})();
+</script>
 </body></html>
